@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-
+import KFLoader from "./KFlogo"
 
 export default function Preloader() {
   const [isVisible, setIsVisible] = useState(true)
@@ -61,7 +61,7 @@ export default function Preloader() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
-            className="absolute bottom-12    text-sm md:text-base font-bold tracking-widest uppercase"
+            className="absolute bottom-12  font-syne  text-sm md:text-base font-bold tracking-widest uppercase"
           >
             Desenvolved by Kayky Fidelis
           </motion.div>

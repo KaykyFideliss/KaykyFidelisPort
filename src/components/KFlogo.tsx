@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-import KFLogo from "./KFLogo"
+
 
 export default function KFLoader() {
   return (
