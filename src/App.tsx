@@ -2,7 +2,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import Preloader from "./components/preloader"
+import Preloader from "./components/Preloader"
 import Header from "./components/header"
 import HeroSection from "./components/hero-section"
 import AboutSection from "./components/AboutSection"
