@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import KFLoader from "./KFlogo"
+
 
 export default function Preloader() {
   const [isVisible, setIsVisible] = useState(true)
