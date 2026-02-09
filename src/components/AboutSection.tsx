@@ -3,7 +3,7 @@
 import { useLayoutEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import BlurText from "./ui/BlurText";
+
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -18,10 +18,7 @@ export default function AboutSection() {
     const path = pathRef.current
     const text = textRef.current
 
-    const handleAnimationComplete = () => {
-  console.log('Animation completed!');
-};
-
+  
     if (!section || !path || !text) return
 
     /* ================= SVG DRAW ================= */
@@ -117,14 +114,7 @@ gsap.fromTo(
 
       {/* ================= CONTEÚDO ================= */}
   <div>
-    <BlurText
-  text="Isn't this so cool?!"
-  delay={200}
-  animateBy="words"
-  direction="bottom"
-  onAnimationComplete={handleAnimationComplete}
-  className="text-2xl mb-8"
-/>
+
 
     
   </div>
