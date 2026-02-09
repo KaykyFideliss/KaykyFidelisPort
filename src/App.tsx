@@ -6,6 +6,8 @@ import Preloader from "./components/Preloader"
 import Header from "./components/header"
 import HeroSection from "./components/hero-section"
 import AboutSection from "./components/AboutSection"
+import Teste from "./components/Teste"
+import Pele from "./components/Pele"
 
 
 
@@ -23,17 +25,29 @@ export default function Home() {
 
 
   return (
-    <main className="min-h-screen bg-blue-400">
-      <Preloader />
-      
-      {/* Conteúdo principal - só aparece depois do preloader */}
-      <div className={`transition-opacity duration-500 ${isLoading ? "opacity-0" : "opacity-100"}`}>
-        <Header />
-        <HeroSection />
-        <AboutSection />
-       
-      
-      </div>
-    </main>
+    <main className="relative min-h-screen bg-blue-400">
+  <Preloader />
+
+  <div className={`transition-opacity duration-500 ${isLoading ? "opacity-0" : "opacity-100"}`}>
+    <Header />
+
+    {/* Wrapper de transição */}
+   
+ <div className="relative">
+  <HeroSection />
+  <AboutSection />
+  <Teste />
+</div>
+
+<Pele />
+
+<Pele />
+
+
+  
+
+    <Pele />
+  </div>
+</main>
   )
 }

@@ -153,10 +153,15 @@ export default function InteractivePortrait() {
 
     const blob = new Blob(renderer);
 
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+const BASE_IMAGE = isMobile ? "/images/1mobile.png" : "/images/1.png";
+const HELMET_IMAGE = isMobile ? "/images/2mobile.png" : "/images/2.png";
+
+
     const textureLoader = new THREE.TextureLoader();
-    const baseTexture = textureLoader.load(
-      "/images/1.png",
-      (texture) => {
+const baseTexture = textureLoader.load(BASE_IMAGE, (texture) => {
+
         const img = texture.image;
         const imgAspect = img.width / img.height;
         const containerAspect = width / height;
@@ -175,7 +180,8 @@ export default function InteractivePortrait() {
       }
     );
 
-    const helmetTexture = textureLoader.load("/images/2.png");
+   const helmetTexture = textureLoader.load(HELMET_IMAGE);
+
 
     baseTexture.colorSpace = THREE.SRGBColorSpace;
     helmetTexture.colorSpace = THREE.SRGBColorSpace;
@@ -362,6 +368,23 @@ export default function InteractivePortrait() {
         bgPlane.geometry.dispose();
         bgPlane.geometry = new THREE.PlaneGeometry(newWidth, newHeight);
       }
+
+      const nowMobile = window.matchMedia("(max-width: 768px)").matches;
+
+const nextBase = nowMobile ? "/images/1mobile.png" : "/images/1.png";
+const nextHelmet = nowMobile ? "/images/2mobile.png" : "/images/2.png";
+
+if (baseTexture.image?.src && !baseTexture.image.src.includes(nextBase)) {
+  baseTexture.dispose();
+  helmetTexture.dispose();
+
+  baseImageMaterial.map = textureLoader.load(nextBase);
+  helmetImageMaterial.map = textureLoader.load(nextHelmet);
+
+  baseImageMaterial.needsUpdate = true;
+  helmetImageMaterial.needsUpdate = true;
+}
+
     };
 
     window.addEventListener("resize", handleResize);
@@ -394,12 +417,17 @@ export default function InteractivePortrait() {
   }, []);
 
   return (
-    <div
-      ref={containerRef}
-      className="fixed inset-0 w-full h-full bg-white dark:black cursor-crosshair overflow-hidden"
-      style={{ touchAction: "none" }}
-    >
-      
-    </div>
+    
+<div
+  ref={containerRef}
+  className="absolute inset-0 w-full h-full overflow-hidden bg-transparent"
+  style={{
+    touchAction: "pan-y",
+    pointerEvents: "auto",
+  }}
+/>
+
+
+
   );
 }
