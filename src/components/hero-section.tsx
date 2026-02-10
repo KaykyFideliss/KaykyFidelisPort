@@ -51,10 +51,7 @@ export default function HeroSection({
  
 
   return (
-    <section
-  ref={containerRef}
-  className="relative h-[200vh] bg-blue-400"
->
+  <section ref={containerRef} className="relative h-[200vh]">
   <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
 
     <motion.div className="absolute inset-0 z-0 pointer-events-none">
