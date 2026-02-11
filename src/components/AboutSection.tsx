@@ -100,8 +100,7 @@ tl.to(
         <BlurText
           className="text-sm md:text-2xl  "
           paragraphs={[
-            'Tenho 18 anos e concluí recentemente o curso Técnico em Informática integrado ao Ensino Médio pela FUNEC Riacho. Atualmente, estou em busca da minha primeira oportunidade de estágio na área de Tecnologia da Informação, com o objetivo de adquirir experiência prática e consolidar minha formação profissional como Técnico em Informática.',
-            'Possuo experiência no desenvolvimento de projetos utilizando HTML, CSS, JavaScript, React, Tailwind CSS e Python. Tenho aprofundado meus estudos principalmente em React e estilização com Tailwind CSS, com atenção especial à componentização, responsividade, organização e boas práticas de código.',
+            'Tenho 18 anos e concluí recentemente o curso Técnico em Informática integrado ao Ensino Médio pela FUNEC Riacho. Estou em busca da minha primeira oportunidade de estágio na área de Tecnologia da Informação para adquirir experiência prática e consolidar minha formação profissional. Possuo experiência no desenvolvimento de projetos com HTML, CSS, JavaScript, React, Tailwind CSS e Python, com foco principal em React e estilização com Tailwind, priorizando componentização, responsividade, organização e boas práticas de código.'
             'Busco uma oportunidade para aplicar meus conhecimentos em projetos reais, contribuir com soluções eficientes e continuar evoluindo tecnicamente, sempre com dedicação, proatividade e vontade constante de crescimento na área de Tecnologia da Informação.Busco uma oportunidade para aplicar meus conhecimentos em projetos reais, contribuir com soluções eficientes e continuar evoluindo tecnicamente, sempre com dedicação, proatividade e vontade constante de crescimento na área de Tecnologia da Informação.',
           ]}
         />
