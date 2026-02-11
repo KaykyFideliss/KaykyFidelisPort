@@ -6,26 +6,23 @@
 
 
 
-/* width */
+/* Scrollbar geral */
 ::-webkit-scrollbar {
   width: 5px;
-  border-radius: 20px;
-
 }
 
-/* Track */
+/* Fundo da barra */
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: transparent !important;
 }
 
-/* Handle */
+/* Parte que desliza */
 ::-webkit-scrollbar-thumb {
-  background: #3D94FF;
-    
-  
+  background-color: #3D94FF;
+  border-radius: 9999px;
 }
 
-/* Handle on hover */
+/* Hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #3D94FF;
+  background-color: #3D94FF;
 }
