@@ -4,7 +4,9 @@
 @tailwind components;
 @tailwind utilities;
 
-
+BODY{
+  background-color: white;
+}
 
 /* Scrollbar geral */
 ::-webkit-scrollbar {

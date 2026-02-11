@@ -10,13 +10,15 @@ gsap.registerPlugin(ScrollTrigger)
 export default function AboutSection() {
   const sectionRef = useRef<HTMLDivElement>(null)
   const contentRef = useRef<HTMLDivElement>(null)
-  const pathRef = useRef<SVGPathElement>(null)
+  // const pathRef = useRef<SVGPathElement>(null)
 
 useLayoutEffect(() => {
   const section = sectionRef.current
   const content = contentRef.current
-  const path = pathRef.current
-  if (!section || !content || !path) return
+  // const path = pathRef.current
+  if (!section || !content ) return
+
+  // || !path
 
   const words = content.querySelectorAll('.blur-word')
 
@@ -33,12 +35,12 @@ useLayoutEffect(() => {
   // =====================
   // PREPARA SVG DRAW
   // =====================
-  const length = path.getTotalLength()
+  // const length = path.getTotalLength()
 
-  gsap.set(path, {
-    strokeDasharray: length,
-    strokeDashoffset: length,
-  })
+  // gsap.set(path, {
+  //   strokeDasharray: length,
+  //   strokeDashoffset: length,
+  // })
 
   // =====================
   // TIMELINE MASTER
@@ -67,15 +69,15 @@ useLayoutEffect(() => {
   })
 
   // SVG DESENHA
-tl.to(
-  path,
-  {
-    strokeDashoffset: 0,
-    ease: 'none',
-    duration: 4, // 🔥 aumenta aqui
-  },
-  '+=0.3'
-)
+// tl.to(
+//   path,
+//   {
+//     strokeDashoffset: 0,
+//     ease: 'none',
+//     duration: 4, // 🔥 aumenta aqui
+//   },
+//   '+=0.3'
+// )
 
   return () => {
     tl.scrollTrigger?.kill()
@@ -106,7 +108,8 @@ tl.to(
         />
       </div>
 
-    <div className="w-full  pt-10">
+
+    {/* <div className="w-full  pt-10">
   <svg
     viewBox="0 0 1920 317"
     className="w-full h-auto"
@@ -120,7 +123,7 @@ tl.to(
       strokeWidth="50"
     />
   </svg>
-</div>
+</div> */}
     </section>
   )
 }
