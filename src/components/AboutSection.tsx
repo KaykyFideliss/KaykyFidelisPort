@@ -95,7 +95,7 @@ tl.to(
 
       <div
         ref={contentRef}
-        className="max-w-7xl font-syne text-terciaria justify-center items-center  px-6 "
+        className="max-w-7xl font-syne text-terciaria justify-center items-center  px-3 md:px-6"
       >
         <BlurText
           className="text-sm md:text-2xl  "
