@@ -9,7 +9,7 @@ export default function BlurText({ paragraphs, className = '' }: BlurTextProps) 
       {paragraphs.map((paragraph, pIndex) => (
         <p
           key={pIndex}
-          className="flex flex-wrap justify-between text-justify"
+          className="flex flex-wrap justify-between text-justify tracking-tighter"
           style={{ textJustify: 'inter-word' }}
         >
           {paragraph.split(' ').map((word, wIndex) => (

@@ -131,7 +131,7 @@ export default function Header() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 bg-white/50 backdrop-blur-xl z-40 flex items-center justify-center"
+            className="fixed inset-0 bg-white backdrop-blur-xl z-40 flex items-center justify-center"
             onClick={() => setMenuOpen(false)}
           >
             <motion.nav

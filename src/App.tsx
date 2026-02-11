@@ -6,8 +6,7 @@ import Preloader from "./components/Preloader"
 import Header from "./components/header"
 import HeroSection from "./components/hero-section"
 import AboutSection from "./components/AboutSection"
-import Teste from "./components/Teste"
-import Pele from "./components/Pele"
+import Projects from "./components/Projects"
 
 
 
@@ -36,17 +35,11 @@ export default function Home() {
  <div className="relative">
   <HeroSection />
   <AboutSection />
-  <Teste />
+
 </div>
 
-<Pele />
+<Projects />
 
-<Pele />
-
-
-  
-
-    <Pele />
   </div>
 </main>
   )
