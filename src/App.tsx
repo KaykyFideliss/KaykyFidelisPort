@@ -7,7 +7,7 @@ import Header from "./components/header"
 import HeroSection from "./components/hero-section"
 import AboutSection from "./components/AboutSection"
 import Projects from "./components/Projects"
-
+import Gallery from "./components/Gallery"
 
 
 export default function Home() {
@@ -39,6 +39,7 @@ export default function Home() {
 </div>
 
 <Projects />
+<Gallery />
 
   </div>
 </main>
