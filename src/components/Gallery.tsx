@@ -51,6 +51,7 @@ const videos = [
       repo: FiGithub,
     },
   },
+
 ];
 
 const Gallery = () => {
@@ -58,31 +59,6 @@ const Gallery = () => {
 
  useLayoutEffect(() => {
   const ctx = gsap.context(() => {
-
-  gsap.fromTo(
-  ".project-card",
-  {
-    x: (i) => (i % 2 === 0 ? -200 : 200), // alterna lados
-    opacity: 1,
-    scale: 0.96,
-    filter: "blur(10px)",
-  },
-  {
-    x: 0,
-    opacity: 1,
-    scale: 1,
-    filter: "blur(0px)",
-    duration: 1.3,
-    ease: "power4.out",
-    stagger: 0.25,
-    scrollTrigger: {
-      trigger: sectionRef.current,
-      start: "top 75%",
-      end: "bottom 60%",
-      scrub: 1, // 🔥 segue o scroll (efeito cinematográfico)
-    },
-  }
-);
 
 
     ScrollTrigger.refresh(); // 🔥 ESSENCIAL
@@ -98,15 +74,19 @@ const Gallery = () => {
       ref={sectionRef}
       className="w-full bg-white flex flex-col justify-center overflow-x-hidden pb-20"
     >
-      <div className="flex justify-center my-10">
-        <h1 className="text-xl md:text-4xl font-syne font-extrabold">
-          MY PROJECTS
-        </h1>
-      </div>
+
+
+      {/* CONTEÚDO */}
+  <div className="relative flex justify-center my-10">
+    <h1 className="text-xl md:text-5xl font-syne font-extrabold">
+      MY PROJECTS
+    </h1>
+  </div>
+     
 
       <div className="projects-grid w-[95%] md:w-[80%] mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
         {videos.map((video) => (
-          <div key={video.id} className=" project-card space-y-4">
+          <div key={video.id} className="  space-y-4">
             
             {/* CARD */}
             <div className="relative group rounded-2xl overflow-hidden border-2 border-terciaria/5">
@@ -222,8 +202,9 @@ const Gallery = () => {
 
           </div>
         ))}
-      </div>
-    </section>
+      </div>  
+  </section>
+    
   );
 };
 

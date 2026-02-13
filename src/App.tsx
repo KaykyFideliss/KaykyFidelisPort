@@ -8,7 +8,7 @@ import HeroSection from "./components/hero-section"
 import AboutSection from "./components/AboutSection"
 import Projects from "./components/Projects"
 import Gallery from "./components/Gallery"
-
+import Stacks from "./components/Stacks"
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true)
@@ -40,6 +40,7 @@ export default function Home() {
 
 <Projects />
 <Gallery />
+<Stacks />
 
   </div>
 </main>
