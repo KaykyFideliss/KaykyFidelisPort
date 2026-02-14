@@ -116,8 +116,8 @@ useLayoutEffect(() => {
           <div className="w-[200vw] h-screen shrink-0 flex bg-white ">
             <div className="relative w-full h-screen shrink-0 flex bg-white">
               {/* Primeiro título */}
-              <div className="absolute top-20 md:top-42 md:px-10 lg:top-16 flex lg:w-1/2 z-20">
-                <h1 className="font-syne text-center md:text-left text-primaria text-4xl md:text-5xl lg:text-7xl font-extrabold  drop-shadow-2xl">
+              <div className="fixed top-20 md:top-42 md:px-10 lg:top-16 flex lg:w-1/2 z-20">
+                <h1 className="font-syne text-left md:text-left text-primaria text-4xl md:text-5xl lg:text-7xl font-extrabold drop-shadow-2xl">
                   Futuro Dev FrontEnd
                 </h1>
               </div>
