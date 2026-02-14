@@ -52,7 +52,7 @@ useLayoutEffect(() => {
 
       gsap.set(path, {
         strokeDasharray: length,
-        strokeDashoffset: length,
+        strokeDashoffset: -length,
       });
 
       gsap.to(path, {
