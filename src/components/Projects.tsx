@@ -53,7 +53,7 @@ useLayoutEffect(() => {
 
    gsap.set(path, {
   strokeDasharray: length,
-  strokeDashoffset: -length, // começa escondido
+  strokeDashoffset: length, // começa escondido
 });
 
 
@@ -135,19 +135,24 @@ useLayoutEffect(() => {
   ref={svgRef}
   viewBox="0 0 6065 1075"
   preserveAspectRatio="xMidYMid meet"
-  className="block h-auto"
+  className="block h-auto "
+  
   fill="none"
 >
 
-                <path
-                  id="mainPath"
-                  d="M5914.04 150.034C5914.04 150.034 5589.49 821.575 5258.04 858.034C4858.04 902.034 4866.04 534.034 4398.04 534.034C3700.89 534.034 3894.04 878.034 3210.04 922.034C2627 959.54 2585.96 558.688 2002.04 578.034C1497.29 594.757 1488.54 705.753 998.04 826.034C507.542 946.316 150.04 806.034 150.04 806.034"
-                  stroke="#0088E8"
 
-                  strokeWidth="200"
-                  strokeLinecap="round"
-                
-                />
+
+
+
+
+  <path
+   id="mainPath"
+    d="M150.04 806.034C150.04 806.034 507.542 946.316 998.04 826.034C1488.54 705.753 1497.29 594.757 2002.04 578.034C2585.96 558.688 2627 959.54 3210.04 922.034C3894.04 878.034 3700.89 534.034 4398.04 534.034C4866.04 534.034 4858.04 902.034 5258.04 858.034C5589.49 821.575 5914.04 150.034 5914.04 150.034"
+    stroke="#0088E8"
+    stroke-width="200"
+    stroke-linecap="round"
+  />
+
               </svg>
             </div>
 
