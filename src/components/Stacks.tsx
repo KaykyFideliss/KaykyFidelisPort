@@ -1,25 +1,63 @@
-import React from 'react'
+"use client"
 
-const Stacks = () => {
-    return (
+import { useLayoutEffect, useRef } from "react"
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 
-        <section className='w-full h-screen bg-white'>
+gsap.registerPlugin(ScrollTrigger)
 
-            <div className='items-center justify-center flex h-screen flex-col gap-5 '>
-                <h1 className='text-6xl font-syne font-extrabold text-center '>
-                    SEMPRE CONECTADO
-                </h1>
-                <h1 className='text-6xl font-syne font-extrabold text-center '>
-                    COM 
-                </h1>
-                <h1 className='text-6xl font-syne font-extrabold text-center '>
-                   NOVAS TECNOLOGIAS
-                </h1>
-            </div>
-        </section>
+export default function Stacks() {
+  const sectionRef = useRef<HTMLDivElement>(null)
 
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.from(".word", {
+        y: -80,
+        opacity: 0,
+        filter: "blur(12px)",
+        duration: 1.2,
+        ease: "power3.out",
+        stagger: 0.15,
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 70%",
+          toggleActions: "play reverse play reverse",
+        }
+      })
+    }, sectionRef)
 
-    )
+    return () => ctx.revert()
+  }, [])
+
+  return (
+    <section
+      ref={sectionRef}
+      className="w-full min-h-screen bg-white flex items-center justify-center"
+    >
+      <div className="flex flex-col items-center justify-center gap-3 sm:gap-4 md:gap-5 px-4">
+        
+        <h1 className="word text-3xl sm:text-5xl md:text-6xl lg:text-7xl 
+                       font-syne font-extrabold text-[#0978ff] text-center">
+          SEMPRE
+        </h1>
+
+        <h1 className="word text-3xl sm:text-5xl md:text-6xl lg:text-7xl 
+                       font-syne font-extrabold text-primaria text-center">
+          CONECTADO AO FUTURO
+        </h1>
+
+        <h1 className="word text-3xl sm:text-5xl md:text-6xl lg:text-7xl 
+                       font-syne font-extrabold text-[#68acff] text-center">
+          IMPULSIONADO PELA INOVAÇÃO
+        </h1>
+
+        <h1 className="word text-3xl sm:text-5xl md:text-6xl lg:text-7xl 
+                       font-syne font-extrabold text-[#8cbefc] text-center">
+          MOVIDO POR TECNOLOGIA
+        </h1>
+
+      </div>
+      
+    </section>
+  )
 }
-
-export default Stacks

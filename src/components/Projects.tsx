@@ -142,7 +142,7 @@ useLayoutEffect(() => {
 
                   strokeWidth="200"
                   strokeLinecap="round"
-                  filter="url(#glow)"
+                
                 />
               </svg>
             </div>
@@ -166,10 +166,10 @@ useLayoutEffect(() => {
             className="relative min-w-[250vw] h-screen shrink-0 bg-white"
           >
             <div className="absolute bottom-10 left-20 p-10 w-80 text-left">
-              <h2 className="text-xl font-syne wind-effect font-extrabold text-primaria pb-5">
+              <h2 className="text-xl font-syne  font-extrabold text-primaria pb-5">
                 PROJETOS REALIZADOS
               </h2>
-              <p className="font-syne z-20 wind-effect ">
+              <p className="font-syne z-20  ">
                 Unique corporate websites
                 Smart open source CMS.
                 E-commerce solutions
@@ -212,7 +212,7 @@ useLayoutEffect(() => {
             ].map((item, i) => (
               <div
                 key={i}
-                className={`absolute z-20 wind-effect  ${item.position === "top" ? "top-24" : "bottom-24"} w-80`}
+                className={`absolute z-20   ${item.position === "top" ? "top-24" : "bottom-24"} w-80`}
                 style={{ left: item.left }}
               >
                 <div
@@ -233,7 +233,7 @@ useLayoutEffect(() => {
             <div className="absolute inset-0 flex items-center justify-center">
               <h1
                 ref={bigTextRef}
-                className="text-4xl lg:text-9xl wind-effect font-syne font-extrabold text-terciaria z-20 whitespace-nowrap"
+                className="text-4xl lg:text-9xl  font-syne font-extrabold text-terciaria z-20 whitespace-nowrap"
               >
                 Sempre utilizando designs modernos
               </h1>
