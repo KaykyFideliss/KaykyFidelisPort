@@ -9,7 +9,7 @@ import AboutSection from "./components/AboutSection"
 import Projects from "./components/Projects"
 import Gallery from "./components/Gallery"
 import Stacks from "./components/Stacks"
-import Stacks2 from "./components/Stacks2"
+
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true)
@@ -42,7 +42,7 @@ export default function Home() {
 <Projects />
 <Gallery />
 <Stacks />
-<Stacks2 />
+
 
   </div>
 </main>
