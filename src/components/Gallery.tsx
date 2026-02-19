@@ -77,14 +77,14 @@ const Gallery = () => {
 
 
       {/* CONTEÚDO */}
-  <div className="relative flex justify-center my-10">
-    <h1 className="text-xl md:text-5xl font-syne font-extrabold">
-      MY PROJECTS
+  <div className="relative flex justify-center my-36  ">
+    <h1 className="text-xl md:text-9xl font-syne font-extrabold text-primaria">
+      PROJETOS
     </h1>
   </div>
      
 
-      <div className="projects-grid w-[95%] md:w-[80%] mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="projects-grid w-[95%] md:w-[90%] hn mx-auto grid grid-cols-1 md:grid-cols-2 gap-20">
         {videos.map((video) => (
           <div key={video.id} className="  space-y-4">
             
@@ -169,11 +169,11 @@ const Gallery = () => {
 
             {/* FOOTER */}
             <div className="flex items-center justify-between px-4">
-              <h2 className="font-syne font-extrabold text-lg">
+              <h2 className="font-syne font-extrabold text-lg md:text-2xl">
                 {video.title}
               </h2>
 
-              <div className="flex items-center gap-4">
+              {/* <div className="flex items-center gap-4">
                 <a
                   href={video.site}
                   target="_blank"
@@ -197,7 +197,7 @@ const Gallery = () => {
                 >
                   <video.icons.repo size={20} />
                 </a>
-              </div>
+              </div> */}
             </div>
 
           </div>

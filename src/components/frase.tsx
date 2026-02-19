@@ -4,6 +4,8 @@ import { useLayoutEffect, useRef } from "react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 
+import { FaReact, FaJs,FaJava  } from "react-icons/fa";
+
 gsap.registerPlugin(ScrollTrigger)
 
 export default function Stacks() {
@@ -30,6 +32,7 @@ export default function Stacks() {
   }, [])
 
   return (
+    <div>
     <section
       ref={sectionRef}
       className="w-full min-h-screen bg-white flex items-center justify-center"
@@ -46,18 +49,28 @@ export default function Stacks() {
           CONECTADO AO FUTURO
         </h1>
 
-        <h1 className="word text-3xl sm:text-5xl md:text-6xl lg:text-7xl 
+        <h1 className="word text-3xl  sm:text-5xl md:text-6xl lg:text-7xl 
                        font-syne font-extrabold text-[#68acff] text-center">
-          IMPULSIONADO PELA INOVAÇÃO
+          MOTIVADO PELA INOVAÇÃO
+        </h1>
+         <h1 className="word text-3xl sm:text-5xl md:text-6xl lg:text-7xl 
+                       font-syne font-extrabold text-[#8cbefc] text-center">
+          E
         </h1>
 
         <h1 className="word text-3xl sm:text-5xl md:text-6xl lg:text-7xl 
-                       font-syne font-extrabold text-[#8cbefc] text-center">
+                       font-syne font-extrabold text-[#b1d2fa] text-center">
           MOVIDO POR TECNOLOGIA
         </h1>
-
+        <div className="flex gap-5 word">
+          <FaJs  className="w-10 h-10 text-[#8cbefc] " />
+        <FaReact className="w-10 h-10 text-[#8cbefc] " />
+         <FaJava  className="w-10 h-10 text-[#8cbefc] " />
+  </div>
       </div>
       
     </section>
+   
+    </div>
   )
 }

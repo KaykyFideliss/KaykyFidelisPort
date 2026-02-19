@@ -8,7 +8,8 @@ import HeroSection from "./components/hero-section"
 import AboutSection from "./components/AboutSection"
 import Projects from "./components/Projects"
 import Gallery from "./components/Gallery"
-import Stacks from "./components/Stacks"
+import Stacks from "./components/frase"
+import Footer from "./components/Footer"
 
 
 export default function Home() {
@@ -44,7 +45,10 @@ export default function Home() {
 <Stacks />
 
 
+  <Footer />
   </div>
+
+
 </main>
   )
 }
