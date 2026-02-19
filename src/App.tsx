@@ -11,6 +11,7 @@ import Gallery from "./components/Gallery"
 import Stacks from "./components/frase"
 import Footer from "./components/Footer"
 
+import HorizontalScroll from "./components/HorizontalScroll"
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true)
@@ -43,6 +44,7 @@ export default function Home() {
 <Projects />
 <Gallery />
 <Stacks />
+<HorizontalScroll />
 
 
   <Footer />
