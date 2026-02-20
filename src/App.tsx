@@ -9,7 +9,7 @@ import AboutSection from "./components/AboutSection"
 import Projects from "./components/Projects"
 import Gallery from "./components/Gallery"
 import Stacks from "./components/frase"
-import Footer from "./components/Footer"
+// import Footer from "./components/Footer"
 
 import HorizontalScroll from "./components/HorizontalScroll"
 
@@ -47,7 +47,7 @@ export default function Home() {
 <HorizontalScroll />
 
 
-  <Footer />
+  {/* <Footer /> */}
   </div>
 
 
