@@ -9,7 +9,7 @@ import AboutSection from "./components/AboutSection"
 import Projects from "./components/Projects"
 import Gallery from "./components/Gallery"
 import Stacks from "./components/frase"
-// import Footer from "./components/Footer"
+import Footer from "./components/Footer"
 
 import HorizontalScroll from "./components/HorizontalScroll"
 
@@ -27,7 +27,7 @@ export default function Home() {
 
 
   return (
-    <main className="relative min-h-screen bg-blue-400">
+    <main className="relative min-h-screen bg-white">
   <Preloader />
 
   <div className={`transition-opacity duration-500 ${isLoading ? "opacity-0" : "opacity-100"}`}>
@@ -45,7 +45,8 @@ export default function Home() {
 <Gallery />
 <Stacks />
 <HorizontalScroll />
-
+<div className="w-full h-screen"></div>
+<Footer />
 
 
   </div>
