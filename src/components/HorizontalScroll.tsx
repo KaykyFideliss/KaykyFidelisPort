@@ -216,6 +216,82 @@ return (
       </div>
     </div>
 
+      {/* BACKEND - CONTAINER */}
+    <div className="bg-primaria w-10/12 min-h-[80vh] md:min-h-[70%] rounded-2xl pb-4 mb-5 md:mb-0 mx-auto">
+      
+      {/* header */}
+      <div className="flex justify-center md:justify-between px-4 md:px-10 py-5">
+        <div className="flex gap-2">
+          <MdOutlineScreenshotMonitor className="text-white h-9 w-9 text-center" />
+          <h1 className="text-white text-xl md:text-3xl font-syne font-extrabold">
+            FRONTEND
+          </h1>
+        </div>
+      </div>
+      
+      {/* Text */}
+      <div className="justify-center md:justify-start   flex ">
+        <div className="md:w-1/2 w-full flex  items-center px-4 md:px-10">
+          <p className="text-terciaria/75 text-lg font-syne font-bold text-center md:text-left">
+            Língua portuguesa: estudos de texto tipos e gêneros textuais; organização do texto; efeitos de sentido; discurso direto,
+          </p>
+        </div>
+      </div>
+
+      {/* frontend */}
+      <div className="flex flex-col md:flex-row h-full mx-4 md:mx-10 md:gap-0 mt-4 md:mt-0">
+        {frontend.map((stack, index) => (
+          <div
+            key={stack.id}
+            onClick={() => toggle(stack.id)}
+            className={`
+              w-full md:w-auto
+              h-auto md:h-[70%] 
+              my-1 md:my-10 
+              cursor-pointer 
+              transition-all duration-500
+              ${open === stack.id ? "flex-[20]" : "flex-[0.7]"}
+              ${stack.color}
+              ${index === 0 ? "rounded-xl md:rounded-l-xl md:rounded-r-none" : ""}
+              ${index === frontend.length - 1 ? "rounded-xl md:rounded-r-xl md:rounded-l-none" : ""}
+              ${index !== 0 && index !== frontend.length - 1 ? "rounded-xl md:rounded-none" : ""}
+            `}
+          >
+            <div className={`
+              mx-6 
+              flex 
+              items-center md:items-start
+              ${open === stack.id ? 'justify-between' : 'justify-end'}
+            `}>
+              {open === stack.id ? (
+                <>
+                  <h1 className="text-white font-syne font-bold text-xl md:text-2xl pt-5">
+                    {stack.title}
+                  </h1>
+                  <div className="pt-5">
+                    {stack.icon}
+                  </div>
+                </>
+              ) : (
+                <div className="py-4 md:pt-5">
+                  {stack.icon}
+                </div>
+              )}
+            </div>
+
+            <div
+              className={`
+                mx-6 text-white font-syne pb-4 md:pt-6 text-justify text-base md:text-lg
+                transition-all duration-500 overflow-hidden
+                ${open === stack.id ? "opacity-100 max-h-40" : "opacity-0 max-h-0"}
+              `}
+            >
+              <p className="font-syne">{stack.text}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
   </section>
 );
 }
