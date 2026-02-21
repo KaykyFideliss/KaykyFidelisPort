@@ -9,8 +9,8 @@ import AboutSection from "./components/AboutSection"
 import Projects from "./components/Projects"
 import Gallery from "./components/Gallery"
 import Stacks from "./components/frase"
-// import Footer from "./components/Footer"
-
+import Footer from "./components/Footer"
+import WorkTogether from "./components/WorkTogether"
 import HorizontalScroll from "./components/HorizontalScroll"
 
 export default function Home() {
@@ -46,6 +46,8 @@ export default function Home() {
 <Stacks />
 <HorizontalScroll />
 
+<WorkTogether />
+<Footer />  
 
 
   </div>

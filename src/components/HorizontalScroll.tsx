@@ -5,13 +5,14 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 
-import { FaReact, FaBootstrap,FaPhp,FaJava,FaGithub } from "react-icons/fa";
+import { FaReact, FaBootstrap,FaPhp,FaJava,FaGithub,FaPython  } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io";
 import { RiTailwindCssFill } from "react-icons/ri";
 
 // BACKEND - ICON 
 import { SiMysql  } from "react-icons/si";
 import { LuMonitorCog, LuMonitor  } from "react-icons/lu";
+import { color } from "framer-motion";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -30,7 +31,7 @@ const pathRef = useRef<SVGPathElement>(null);
       id: 1,
       title: "React",
       icon: <FaReact className="text-white text-2xl md:text-3xl" />,
-       text: "Em 2025, tive meu primeiro contato com ReactJS, uma tecnologia que conheci de forma espontânea e que rapidamente se tornou um divisor de águas na minha jornada como desenvolvedor. Sempre tive grande interesse por interfaces modernas e experiências dinâmicas, e buscava uma abordagem mais eficiente e estruturada do que o HTML e CSS tradicionais. Com React, passei a desenvolver aplicações mais organizadas, escaláveis e reutilizáveis. A biblioteca ampliou minha forma de pensar sobre construção de interfaces, incentivando uma mentalidade orientada a componentes, reutilização de código e melhor gestão de estados.",
+       text: "Em 2025, tive meu primeiro contato com ReactJS, uma tecnologia que conheci de forma espontânea e que rapidamente se tornou um divisor de águas na minha jornada como desenvolvedor. Sempre tive grande interesse por interfaces modernas e experiências dinâmicas, e buscava uma abordagem mais eficiente e estruturada do que o HTML e CSS tradicionais. Com React, passei a desenvolver aplicações mais organizadas, escaláveis e reutilizáveis.",
       color: "bg-[#6BB0FF]",
       text2:"sdas",
     },
@@ -72,7 +73,7 @@ const pathRef = useRef<SVGPathElement>(null);
       title: "Bootstrap",
       icon: <FaBootstrap className="text-white text-2xl md:text-3xl" />,
       text: "Tive meu primeiro contato com Bootstrap durante o curso técnico em Informática. Após a introdução do framework em aula, aprofundei-me de forma autônoma para compreender sua proposta e funcionamento. Utilizei Bootstrap em alguns projetos, o que me permitiu desenvolver uma base sólida em construção de layouts responsivos, utilização de componentes pré-estilizados e aplicação de boas práticas de estruturação de interfaces.",
-      color: "bg-[#C7E1FF]",
+      color: "bg-[#DEEEFF]",
     },
   ];
 
@@ -81,29 +82,36 @@ const pathRef = useRef<SVGPathElement>(null);
       id: 1,
       title: "MySQL",
       icon: <SiMysql className="text-white text-2xl md:text-5xl" />,
-      text: "Biblioteca moderna para construção de interfaces reativas.",
+      text: "Meu primeiro contato com o MySQL foi durante uma aula de Banco de Dados, e esse momento despertou meu interesse em ir além do básico. A partir daí, mergulhei em estudos mais aprofundados sobre bancos de dados relacionais, explorando desde modelagem de dados e normalização até consultas complexas e a arquitetura interna do MySQL. Com a prática, desenvolvi a capacidade de estruturar bancos de dados eficientes e otimizar consultas para melhor desempenho. Hoje, compreendo o banco de dados como a base sólida que garante consistência, segurança e eficiência em qualquer aplicação, e essa jornada consolidou minha paixão por trabalhar com dados de forma estruturada.",
       color: "bg-[#6BB0FF]",
     },
     {
       id: 2,
       title: "PHP",
       icon: <FaPhp   className="text-white text-2xl md:text-4xl" />,
-      text: "Linguagem essencial da web para lógica e interatividade.",
+      text: "O PHP foi minha primeira experiência com desenvolvimento FullStack, sendo a base dos meus primeiros projetos. Foi com ele que compreendi, na prática, a comunicação entre front-end e back-end, além dos conceitos fundamentais de requisições e manipulação de dados. Desenvolvi sistemas completos de cadastro e visualização que, até hoje, estão em funcionamento em um e-commerce real — o que me trouxe uma visão valiosa sobre a importância da estabilidade e da manutenção de sistemas em produção. ",
       color: "bg-[#7DBAFF]",
     },
     {
-      id: 3,
-      title: "Java",
-      icon: <FaJava  className="text-white text-2xl md:text-3xl" />,
-      text: "Framework utility-first altamente produtivo.",
-      color: "bg-[#A4CFFF]",
+      id:3,
+      title:"Python",
+      icon: <FaPython  className="text-white text-2xl md:text-3xl" />,
+      text:"O Python foi uma das primeiras linguagens que estudei por conta própria, logo após aprender os fundamentos de algoritmos. Fui atraído pela sua sintaxe fácil e intuitiva, que tornou o aprendizado mais natural e me permitiu evoluir rapidamente. Com ele, aprendi a desenvolver funções, trabalhar com arrays, utilizar métodos e estruturar soluções mais completas. Coloquei esse conhecimento em prática criando sistemas que consomem dados de APIs e os transformam em dashboards interativos. Também tive meu primeiro contato com desenvolvimento web utilizando Flask, o que ampliou minha visão sobre as possibilidades da linguagem.",
+       color: "bg-[#A4CFFF]",
     },
     {
       id: 4,
+      title: "Java",
+      icon: <FaJava  className="text-white text-2xl md:text-3xl" />,
+      text: "Estou dando meus primeiros passos no Java e já posso dizer que encontrei uma linguagem que me inspira a ir mais longe. Por ser robusta e apresentar um nível elevado de complexidade, o Java representa exatamente o tipo de desafio que me motiva. Como gosto de superar limites, vejo nessa linguagem o ambiente ideal para entregar meu melhor e evoluir constantemente como desenvolvedor.",
+      color: "bg-[#C7E1FF]",
+    },
+    {
+      id: 5,
       title: "GitHub",
       icon: <FaGithub   className="text-white text-2xl md:text-3xl" />,
-      text: "Framework CSS tradicional com componentes prontos.",
-      color: "bg-[#C7E1FF]",
+      text: "O Git e o GitHub foram verdadeiros divisores de águas na minha organização como desenvolvedor. Antes, enfrentava diversos problemas para salvar e transportar meus arquivos entre dispositivos, o que gerava retrabalho e confusão. Com o versionamento, passei a ter controle total do histórico do meu código, podendo gerenciar versões, recuperar estados anteriores e colaborar de forma muito mais eficiente. Essa ferramenta simplificou minha rotina e me deu a segurança que eu precisava para evoluir meus projetos.",
+      color: "bg-[#DEEEFF]",
     },
   ];
 
@@ -172,7 +180,7 @@ useLayoutEffect(() => {
           </div>
 
           {/* FRONTEND - CONTAINER */}
-          <div className="bg-primaria w-10/12 min-h-[80vh] md:min-h-[70%] rounded-2xl pb-4 mb-5 md:mb-0 mx-auto">
+          <div className="bg-primaria w-10/12 min-h-[80vh] md:min-h-[70%] rounded-2xl pb-4 mb-5 md:mb-0 mx-auto overflow-hidden">
             
             {/* header */}
             <div className="flex justify-center md:justify-between px-4 md:px-10 py-5">
@@ -187,79 +195,85 @@ useLayoutEffect(() => {
             {/* Text */}
             <div className="justify-center md:justify-start flex">
               <div className="md:w-1/2 w-full flex items-center px-4 md:px-10">
-                <p className="text-terciaria/75 text-lg font-syne font-bold text-center md:text-left">
+                <p className="text-terciaria/75 text-xs md:text-lg font-syne font-bold text-center md:text-left">
                   Língua portuguesa: estudos de texto tipos e gêneros textuais; organização do texto; efeitos de sentido; discurso direto,
                 </p>
               </div>
             </div>
 
             {/* frontend */}
-            <div className="flex flex-col lg:flex-row h-full mx-4 lg:mx-10 lg:gap-0 mt-4 lg:mt-0">
-          {frontend.map((stack, index) => {
-  const isOpen = open === stack.id;
-  const hasOpen = open !== null;
+ <div className="flex flex-col md:flex-row h-full mx-4 lg:mx-10 gap-2 lg:gap-0 mt-4 lg:mt-0">
+  {frontend.map((stack, index) => {
+    const isOpen = open === stack.id;
+    const hasOpen = open !== null;
 
-  return (
-    <div
-      key={stack.id}
-      onClick={() => toggle(stack.id)}
-      className={`
-        w-full md:w-auto
-        h-auto lg:h-[60%]
-        my-1 md:my-10
-        cursor-pointer
-        transition-all duration-500
-
-         ${isOpen ? "lg:flex-[20]" : "lg:flex-[0.7]"}
-        ${stack.color}
-
-      
-        ${hasOpen && !isOpen ? "hidden md:flex" : ""}
-        ${isOpen ? "order-first" : ""}
-
-      
-        ${isOpen ? "min-h-96 md:min-h-0" : ""}
-
-        ${index === 0 ? "rounded-l md:rounded-l-xl md:rounded-r-none" : ""}
-        ${index === frontend.length - 1 ? "rounded-xl md:rounded-r-xl md:rounded-l-none" : ""}
-        ${index !== 0 && index !== frontend.length - 1 ? "rounded-xl md:rounded-none" : ""}
-      `}
-    >
-      {/* HEADER */}
+    return (
       <div
+        key={stack.id}
+        onClick={() => toggle(stack.id)}
         className={`
-          mx-6 flex items-center md:items-start
-          ${isOpen ? "justify-between" : "justify-end"}
+          relative
+          w-full md:w-auto
+          h-auto md:h-[60vh] lg:h-[70%]
+
+          my-1 md:my-2 lg:my-10
+          cursor-pointer
+
+          transition-all duration-700
+          ease-[cubic-bezier(0.22,1,0.36,1)]
+
+          flex flex-col justify-start
+
+          ${isOpen ? "lg:flex-[5]" : "lg:flex-[0.6]"}
+          ${stack.color}
+
+          ${hasOpen && !isOpen ? "hidden lg:flex" : ""}
+          ${isOpen ? "order-first lg:order-none" : ""}
+
+          rounded-xl
+          ${index === 0 ? "lg:rounded-l-xl lg:rounded-r-none" : ""}
+          ${index === frontend.length - 1 ? "lg:rounded-r-xl lg:rounded-l-none" : ""}
+          ${index !== 0 && index !== frontend.length - 1 ? "lg:rounded-none" : ""}
         `}
       >
-        {isOpen ? (
-          <>
-            <h1 className="text-white font-syne font-bold text-xl md:text-2xl pt-5">
+        {/* HEADER */}
+        <div
+          className={`
+            mx-6 flex items-center
+            ${isOpen ? "justify-between pt-5" : "justify-end py-4 lg:pt-5"}
+          `}
+        >
+          {isOpen && (
+            <h1 className="text-white font-syne font-bold text-xl lg:text-2xl">
               {stack.title}
             </h1>
-            <div className="pt-5">{stack.icon}</div>
-          </>
-        ) : (
-          <div className="py-4 md:pt-5">{stack.icon}</div>
-        )}
-      </div>
+          )}
 
-      {/* CONTENT */}
-      <div
-        className={`
-          mx-6 text-white font-syne pb-4 md:pt-6
-          text-justify text-base md:text-lg
-          transition-all duration-500 overflow-hidden
+          <div>{stack.icon}</div>
+        </div>
 
-          ${isOpen ? "opacity-100 max-h-96" : "opacity-0 max-h-0"}
-        `}
-      >
-        <p>{stack.text}</p>
+        {/* CONTENT */}
+        <div
+          className={`
+            mx-6 text-white font-syne
+            text-justify text-sm md:text-base lg:text-lg
+
+            transition-all duration-700
+            ease-[cubic-bezier(0.22,1,0.36,1)]
+
+            overflow-hidden
+
+            ${isOpen 
+              ? "opacity-100 max-h-[400px] md:max-h-[500px] lg:max-h-96 pb-6 pt-2" 
+              : "opacity-0 max-h-0"}
+          `}
+        >
+          <p>{stack.text}</p>
+        </div>
       </div>
-    </div>
-  );
-})}
-            </div>
+    );
+  })}
+</div>
           </div> 
         </div>
 
@@ -269,7 +283,7 @@ useLayoutEffect(() => {
              
           {/* Título */}
           <div className="items-center justify-center flex pt-10 md:pb-10 md:pt-12">
-            <h1 className="font-syne font-extrabold text-2xl md:text-7xl pb-5">
+            <h1 className="font-syne font-extrabold text-5xl md:text-7xl pb-5">
               STACKS
             </h1>
           </div>
@@ -290,64 +304,86 @@ useLayoutEffect(() => {
             {/* Text */}
             <div className="justify-center md:justify-start flex">
               <div className="md:w-1/2 w-full flex items-center px-4 md:px-10">
-                <p className="text-terciaria/75 text-lg font-syne font-bold text-center md:text-left">
+                <p className="text-terciaria/75 text-xs md:text-lg font-syne font-bold text-center md:text-left">
                   Língua portuguesa: estudos de texto tipos e gêneros textuais; organização do texto; efeitos de sentido; discurso direto,
                 </p>
               </div>
             </div>
 
-            {/* backend */}
-            <div className="flex flex-col lg:flex-row h-full mx-4 md:mx-10 md:gap-0 mt-4 md:mt-0">
-              {backend.map((stack, index) => (
-                <div
-                  key={stack.id}
-                  onClick={() => toggle(stack.id)}
-                  className={`
-  w-full lg:w-auto
-  h-auto lg:h-[60%]
-  my-1 md:my-10
-  cursor-pointer
-  transition-all duration-500
+            {/* frontend */}
+ <div className="flex flex-col md:flex-row h-full mx-4 lg:mx-10 gap-2 lg:gap-0 mt-4 lg:mt-0">
+  {backend.map((stack, index) => {
+    const isOpen = open === stack.id;
+    const hasOpen = open !== null;
 
-  ${open === stack.id ? "md:flex-[20]" : "md:flex-[0.7]"}
-  ${stack.color}
+    return (
+      <div
+        key={stack.id}
+        onClick={() => toggle(stack.id)}
+        className={`
+          relative
+          w-full md:w-auto
+          h-auto md:h-[60vh] lg:h-[70%]
 
-  ${index === 0 ? "rounded-xl md:rounded-l-xl md:rounded-r-none" : ""}
-  ${index === backend.length - 1 ? "rounded-xl md:rounded-r-xl md:rounded-l-none" : ""}
-  ${index !== 0 && index !== backend.length - 1 ? "rounded-xl md:rounded-none" : ""}
-`}
-                >
-                  <div
-                    className={`
-                      mx-6 flex items-center md:items-start
-                      ${open === stack.id ? "justify-between" : "justify-end"}
-                    `}
-                  >
-                    {open === stack.id ? (
-                      <>
-                        <h1 className="text-white font-syne font-bold text-xl md:text-2xl pt-5">
-                          {stack.title}
-                        </h1>
-                        <div className="pt-5">{stack.icon}</div>
-                      </>
-                    ) : (
-                      <div className="py-4 md:pt-5">{stack.icon}</div>
-                    )}
-                  </div>
+          my-1 md:my-2 lg:my-10
+          cursor-pointer
 
-                  <div
-                    className={`
-                      mx-6 text-white font-syne pb-4 md:pt-6 text-justify text-base md:text-lg
-                      transition-all duration-500 overflow-hidden
-                      ${open === stack.id ? "opacity-100 max-h-40" : "opacity-0 max-h-0"}
-                    `}
-                  >
-                    <p className="font-syne ">{stack.text}</p>
-                  </div>
-                 
-                </div>
-              ))}
-            </div>
+          transition-all duration-700
+          ease-[cubic-bezier(0.22,1,0.36,1)]
+
+          flex flex-col justify-start
+
+          ${isOpen ? "lg:flex-[5]" : "lg:flex-[0.6]"}
+          ${stack.color}
+
+          ${hasOpen && !isOpen ? "hidden lg:flex" : ""}
+          ${isOpen ? "order-first lg:order-none" : ""}
+
+          rounded-xl
+          ${index === 0 ? "lg:rounded-l-xl lg:rounded-r-none" : ""}
+          ${index === backend.length - 1 ? "lg:rounded-r-xl lg:rounded-l-none" : ""}
+          ${index !== 0 && index !== backend.length - 1 ? "lg:rounded-none" : ""}
+        `}
+      >
+        {/* HEADER */}
+        <div
+          className={`
+            mx-6 flex items-center
+            ${isOpen ? "justify-between pt-5" : "justify-end py-4 lg:pt-5"}
+          `}
+        >
+          {isOpen && (
+            <h1 className="text-white font-syne font-bold text-xl lg:text-2xl">
+              {stack.title}
+            </h1>
+          )}
+
+          <div>{stack.icon}</div>
+        </div>
+
+        {/* CONTENT */}
+        <div
+          className={`
+            mx-6 text-white font-syne
+            text-justify text-sm md:text-base lg:text-lg
+
+            transition-all duration-700
+            ease-[cubic-bezier(0.22,1,0.36,1)]
+
+            overflow-hidden
+
+            ${isOpen 
+              ? "opacity-100 max-h-[400px] md:max-h-[500px] lg:max-h-96 pb-6 pt-2" 
+              : "opacity-0 max-h-0"}
+          `}
+        >
+          <p>{stack.text}</p>
+        </div>
+      </div>
+    );
+  })}
+</div>
+          
           </div>
 
         </div>
