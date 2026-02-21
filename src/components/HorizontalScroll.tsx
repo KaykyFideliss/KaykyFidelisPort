@@ -30,21 +30,22 @@ const pathRef = useRef<SVGPathElement>(null);
       id: 1,
       title: "React",
       icon: <FaReact className="text-white text-2xl md:text-3xl" />,
-      text: "Biblioteca moderna para construção de interfaces reativas.",
+       text: "Em 2025, tive meu primeiro contato com ReactJS, uma tecnologia que conheci de forma espontânea e que rapidamente se tornou um divisor de águas na minha jornada como desenvolvedor. Sempre tive grande interesse por interfaces modernas e experiências dinâmicas, e buscava uma abordagem mais eficiente e estruturada do que o HTML e CSS tradicionais. Com React, passei a desenvolver aplicações mais organizadas, escaláveis e reutilizáveis. A biblioteca ampliou minha forma de pensar sobre construção de interfaces, incentivando uma mentalidade orientada a componentes, reutilização de código e melhor gestão de estados.",
       color: "bg-[#6BB0FF]",
+      text2:"sdas",
     },
     {
       id: 2,
       title: "JavaScript",
       icon: <IoLogoJavascript className="text-white text-2xl md:text-3xl" />,
-      text: "Linguagem essencial da web para lógica e interatividade.",
+      text: "Após essa experiência, meu interesse por tecnologia se intensificou. Foi então que conheci o JavaScript, uma linguagem que trouxe dinamismo e interatividade aos meus projetos. Com ela, evoluí de interfaces estáticas e puramente visuais para experiências mais ricas, com animações e comportamentos avançados, ampliando significativamente a qualidade e o impacto das minhas aplicações.",
       color: "bg-[#7DBAFF]",
     },
     {
       id: 3,
       title: "Tailwind",
       icon: <RiTailwindCssFill className="text-white text-2xl md:text-3xl" />,
-      text: "Framework utility-first altamente produtivo.",
+      text: "O Tailwind CSS passou a desempenhar um papel fundamental no meu fluxo de estilização. Buscando maior eficiência e previsibilidade no design responsivo, encontrei no framework uma abordagem utilitária que reduziu significativamente a necessidade de escrever CSS tradicional e lidar diretamente com múltiplas media queries. Como resultado, obtive ganhos claros em produtividade, consistência visual e velocidade no desenvolvimento das interfaces.",
       color: "bg-[#A4CFFF]",
     },
     {
@@ -63,14 +64,14 @@ const pathRef = useRef<SVGPathElement>(null);
     <path d="m19.51,8.46h-1.14c-.06,0-.13.03-.14.1l-1.58,6.86c0,.03,0,.06.02.09.03.03.07.05.11.05h1.42c.08,0,.13-.04.14-.1l.17-.78c.01-.06,0-.11-.06-.14l-.25-.13-.24-.13-.09-.05c-.02,0-.03-.02-.02-.04,0-.03.02-.05.05-.05h.78c.23,0,.47-.01.69-.05,1.61-.3,2.68-1.59,2.71-3.34.03-1.5-.81-2.26-2.48-2.26Zm-.39,4.08h-.03s.45-1.98.45-1.98c.01-.06.01-.09-.02-.11l-.7-.37c-.02,0-.03-.02-.02-.04,0-.03.02-.05.05-.05h1.04c.32,0,.5.3.49.79-.01.85-.42,1.74-1.17,1.77Z"/>
   </svg>
 ),
-      text: "Framework CSS tradicional com componentes prontos.",
+      text: "Em 2026, tive contato com o GSAP (GreenSock Animation Platform), uma ferramenta que ampliou significativamente minhas possibilidades criativas no desenvolvimento front-end. Com ela, passei a criar animações mais sofisticadas, fluidas e performáticas. O uso do ScrollTrigger, em especial, permitiu explorar interações baseadas em rolagem — um recurso que sempre admirei pela capacidade de enriquecer a experiência do usuário e tornar as interfaces mais dinâmicas e envolventes.",
       color: "bg-[#C7E1FF]",
     },
       {
       id: 5,
       title: "Bootstrap",
       icon: <FaBootstrap className="text-white text-2xl md:text-3xl" />,
-      text: "Framework CSS tradicional com componentes prontos.",
+      text: "Tive meu primeiro contato com Bootstrap durante o curso técnico em Informática. Após a introdução do framework em aula, aprofundei-me de forma autônoma para compreender sua proposta e funcionamento. Utilizei Bootstrap em alguns projetos, o que me permitiu desenvolver uma base sólida em construção de layouts responsivos, utilização de componentes pré-estilizados e aplicação de boas práticas de estruturação de interfaces.",
       color: "bg-[#C7E1FF]",
     },
   ];
@@ -193,57 +194,73 @@ useLayoutEffect(() => {
             </div>
 
             {/* frontend */}
-            <div className="flex flex-col md:flex-row h-full mx-4 md:mx-10 md:gap-0 mt-4 md:mt-0">
-              {frontend.map((stack, index) => (
-                <div
-                  key={stack.id}
-                  onClick={() => toggle(stack.id)}
-                               className={`
-  w-full md:w-auto
-  h-auto md:h-[60%]
-  my-1 md:my-10
-  cursor-pointer
-  transition-all duration-500
+            <div className="flex flex-col lg:flex-row h-full mx-4 lg:mx-10 lg:gap-0 mt-4 lg:mt-0">
+          {frontend.map((stack, index) => {
+  const isOpen = open === stack.id;
+  const hasOpen = open !== null;
 
-  ${open === stack.id ? "md:flex-[20]" : "md:flex-[0.7]"}
-  ${stack.color}
+  return (
+    <div
+      key={stack.id}
+      onClick={() => toggle(stack.id)}
+      className={`
+        w-full md:w-auto
+        h-auto lg:h-[60%]
+        my-1 md:my-10
+        cursor-pointer
+        transition-all duration-500
 
-  ${index === 0 ? "rounded-xl md:rounded-l-xl md:rounded-r-xl" : ""}
-  ${index === backend.length - 1 ? "rounded-xl md:rounded-r-xl md:rounded-l-none" : ""}
-  ${index !== 0 && index !== backend.length - 1 ? "rounded-xl md:rounded-none" : ""}
-`}
-                >
-                  <div
-                    className={`
-                      mx-6 flex items-center md:items-start
-                      ${open === stack.id ? "justify-between" : "justify-end"}
-                    `}
-                  >
-                    {open === stack.id ? (
-                      <>
-                        <h1 className="text-white font-syne font-bold text-xl md:text-2xl pt-5">
-                          {stack.title}
-                        </h1>
-                        <div className="pt-5">{stack.icon}</div>
-                      </>
-                    ) : (
-                      <div className="py-4 md:pt-5">{stack.icon}</div>
-                    )}
-                  </div>
+         ${isOpen ? "lg:flex-[20]" : "lg:flex-[0.7]"}
+        ${stack.color}
 
-                  <div
-                    className={`
-                      mx-6 text-white font-syne pb-4 md:pt-6 text-justify text-base md:text-lg
-                      transition-all duration-500 overflow-hidden
-                      ${open === stack.id ? "opacity-100 max-h-40" : "opacity-0 max-h-0"}
-                    `}
-                  >
-                    <p className="font-syne">{stack.text}</p>
-                  </div>
-                </div>
-              ))}
+      
+        ${hasOpen && !isOpen ? "hidden md:flex" : ""}
+        ${isOpen ? "order-first" : ""}
+
+      
+        ${isOpen ? "min-h-96 md:min-h-0" : ""}
+
+        ${index === 0 ? "rounded-l md:rounded-l-xl md:rounded-r-none" : ""}
+        ${index === frontend.length - 1 ? "rounded-xl md:rounded-r-xl md:rounded-l-none" : ""}
+        ${index !== 0 && index !== frontend.length - 1 ? "rounded-xl md:rounded-none" : ""}
+      `}
+    >
+      {/* HEADER */}
+      <div
+        className={`
+          mx-6 flex items-center md:items-start
+          ${isOpen ? "justify-between" : "justify-end"}
+        `}
+      >
+        {isOpen ? (
+          <>
+            <h1 className="text-white font-syne font-bold text-xl md:text-2xl pt-5">
+              {stack.title}
+            </h1>
+            <div className="pt-5">{stack.icon}</div>
+          </>
+        ) : (
+          <div className="py-4 md:pt-5">{stack.icon}</div>
+        )}
+      </div>
+
+      {/* CONTENT */}
+      <div
+        className={`
+          mx-6 text-white font-syne pb-4 md:pt-6
+          text-justify text-base md:text-lg
+          transition-all duration-500 overflow-hidden
+
+          ${isOpen ? "opacity-100 max-h-96" : "opacity-0 max-h-0"}
+        `}
+      >
+        <p>{stack.text}</p>
+      </div>
+    </div>
+  );
+})}
             </div>
-          </div>
+          </div> 
         </div>
 
         {/* ================= BACKEND ================= */}
@@ -280,14 +297,14 @@ useLayoutEffect(() => {
             </div>
 
             {/* backend */}
-            <div className="flex flex-col md:flex-row h-full mx-4 md:mx-10 md:gap-0 mt-4 md:mt-0">
+            <div className="flex flex-col lg:flex-row h-full mx-4 md:mx-10 md:gap-0 mt-4 md:mt-0">
               {backend.map((stack, index) => (
                 <div
                   key={stack.id}
                   onClick={() => toggle(stack.id)}
                   className={`
-  w-full md:w-auto
-  h-auto md:h-[60%]
+  w-full lg:w-auto
+  h-auto lg:h-[60%]
   my-1 md:my-10
   cursor-pointer
   transition-all duration-500
@@ -325,8 +342,9 @@ useLayoutEffect(() => {
                       ${open === stack.id ? "opacity-100 max-h-40" : "opacity-0 max-h-0"}
                     `}
                   >
-                    <p className="font-syne">{stack.text}</p>
+                    <p className="font-syne ">{stack.text}</p>
                   </div>
+                 
                 </div>
               ))}
             </div>
@@ -344,6 +362,8 @@ useLayoutEffect(() => {
         </div>
 
       </div>
+
+      
     </section>
   );
 }
