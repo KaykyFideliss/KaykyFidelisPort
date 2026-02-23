@@ -6,17 +6,17 @@ const WorkTogether = () => {
     {
       name: "LinkedIn",
       icon: <FaLinkedin className="text-4xl md:text-6xl" />,
-      url: "https://linkedin.com/in/seuusuario",
+      url: "https://www.linkedin.com/in/kaykyfidelis/",
     },
     {
       name: "GitHub",
       icon: <FaGithub className="text-4xl md:text-6xl" />,
-      url: "https://github.com/seuusuario",
+      url: "https://github.com/KaykyFideliss",
     },
     {
       name: "Instagram",
       icon: <FaInstagram className="text-4xl md:text-6xl" />,
-      url: "https://instagram.com/seuusuario",
+      url: "https://www.instagram.com/fidelizx.74/",
     },
   ]
 
@@ -82,6 +82,8 @@ const WorkTogether = () => {
         </div>
 
       </div>
+     
+     
     </section>
   )
 }

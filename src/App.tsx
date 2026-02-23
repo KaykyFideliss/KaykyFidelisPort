@@ -27,32 +27,28 @@ export default function Home() {
 
 
   return (
-    <main className="relative min-h-screen  bg-blue-400">
-  <Preloader />
+ <main className="relative min-h-screen bg-blue-400">
+  
+  {isLoading && <Preloader />}
 
-  <div className={`transition-opacity duration-500 ${isLoading ? "opacity-0" : "opacity-100"}`}>
+  <div
+    className={`transition-opacity duration-500 ${
+      isLoading ? "opacity-0" : "opacity-100"
+    }`}
+  >
     <Header />
 
-    {/* Wrapper de transição */}
-   
- <div className="relative">
-  <HeroSection />
-  <AboutSection />
-
-</div>
-
-<Projects />
-<Gallery />
-<Stacks />
-<HorizontalScroll />
-
-<WorkTogether />
-<Footer />  
-
-
+    <div className="relative">
+      <HeroSection />
+      <AboutSection />
+      <Projects />
+      <Gallery />
+      <Stacks />
+      <HorizontalScroll />
+      <WorkTogether />
+      <Footer />
+    </div>
   </div>
-
-
 </main>
   )
 }

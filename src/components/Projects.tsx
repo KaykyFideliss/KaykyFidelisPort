@@ -122,12 +122,7 @@ useLayoutEffect(() => {
                 </h1>
               </div>
 
-              {/* Segundo título no final dos 200vw */}
-              <div className="absolute left-[100vw] top-40 md:top-20 md:top-42 md:px-10 lg:top-16 flex lg:w-1/2 z-20">
-                <h1 className="  font-syne text-terciaria text-4xl md:text-5xl lg:text-7xl font-extrabold">
-                  Conhecendo novas tecnologias
-                </h1>
-              </div>
+             
             </div>
             <div className="absolute top-96 md:top-0 -translate-y-1/2 left-40 md:-left-60   w-[550vw] pointer-events-none z-10">
 
