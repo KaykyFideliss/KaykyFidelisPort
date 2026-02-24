@@ -112,56 +112,117 @@ useLayoutEffect(() => {
         className="relative w-full h-screen overflow-hidden bg-white"
       >
         <div ref={wrapperRef} className="flex h-full relative" >
-          {/*  tela 1 */}
-          <div className="w-[200vw] h-screen shrink-0 flex bg-white ">
-            <div className="relative w-full h-screen shrink-0 flex bg-white">
-              {/* Primeiro título */}
-              <div className="fixed top-20 md:top-42 md:px-10 lg:top-16 flex lg:w-1/2 z-20">
-                <h1 className="font-syne text-left md:text-left text-primaria text-4xl md:text-5xl lg:text-7xl font-extrabold drop-shadow-2xl">
-                  Futuro Dev FrontEnd
-                </h1>
-              </div>
+       {/* tela 1 */}
+<div className="w-[200vw] h-screen shrink-0 flex bg-white">
 
-             
-            </div>
-            <div className="absolute top-96 md:top-0 -translate-y-1/2 left-40 md:-left-60   w-[550vw] pointer-events-none z-10">
+  {/* PRIMEIRA PARTE */}
+<section className="relative w-screen h-screen shrink-0 grid grid-cols-2 grid-rows-2 bg-white overflow-hidden">
 
-             <svg
-  ref={svgRef}
-  viewBox="0 0 6065 1075"
-  preserveAspectRatio="xMidYMid meet"
-  className="block h-auto "
-  
-  fill="none"
->
+  {/* 🔵 SVG path gigante (fundo) */}
+  <div className="absolute top-96 md:top-0 -translate-y-1/2 left-40 md:-left-60 w-[550vw] pointer-events-none z-10">
+    <svg
+      ref={svgRef}
+      viewBox="0 0 6065 1075"
+      preserveAspectRatio="xMidYMid meet"
+      className="block h-auto"
+      fill="none"
+    >
+      <path
+        id="mainPath"
+        d="M150.04 806.034C150.04 806.034 507.542 946.316 998.04 826.034C1488.54 705.753 1497.29 594.757 2002.04 578.034C2585.96 558.688 2627 959.54 3210.04 922.034C3894.04 878.034 3700.89 534.034 4398.04 534.034C4866.04 534.034 4858.04 902.034 5258.04 858.034C5589.49 821.575 5914.04 150.034 5914.04 150.034"
+        stroke="#0088E8"
+        strokeWidth="200"
+        strokeLinecap="round"
+      />
+    </svg>
+  </div>
 
+  {/* 🟣 CANTO SUPERIOR ESQUERDO — Título */}
+  <div className="flex items-start p-10 z-20">
+    <h1 className="font-syne text-primaria text-4xl md:text-5xl lg:text-7xl font-extrabold leading-tight">
+      Futuro Dev <br /> FrontEnd
+    </h1>
+  </div>
 
+  {/* ✨ CANTO SUPERIOR DIREITO — Texto complementar */}
+  <div className="flex items-start p-10 z-20">
+    <p className="font-syne text-lg md:text-xl lg:text-2xl text-secundaria max-w-md">
+      Criando experiências digitais modernas, fluidas e centradas no usuário.
+    </p>
+  </div>
 
+  {/* 🔥 CANTO INFERIOR ESQUERDO — Badge / Destaque */}
+  <div className="flex items-end p-10 z-20">
+    <div className="bg-primaria text-white px-6 py-3 rounded-2xl font-syne text-lg shadow-lg">
+      🚀 Foco em UI / UX
+    </div>
+  </div>
 
+  {/* 🧾 CANTO INFERIOR DIREITO — Texto */}
+  <div className="flex items-end justify-end p-10 z-20">
+    <p className="text-justify font-syne font-bold text-base md:text-lg lg:text-3xl text-terciaria max-w-2xl">
+      Sou um desenvolvedor Frontend focado em criar interfaces modernas,
+      responsivas e altamente performáticas. Transformo ideias em experiências
+      digitais intuitivas, combinando design estratégico, animações fluidas e
+      código limpo.
 
+      Tenho especial atenção à usabilidade, acessibilidade e aos detalhes que
+      elevam a experiência do usuário.
+    </p>
+  </div>
 
-  <path
-   id="mainPath"
-    d="M150.04 806.034C150.04 806.034 507.542 946.316 998.04 826.034C1488.54 705.753 1497.29 594.757 2002.04 578.034C2585.96 558.688 2627 959.54 3210.04 922.034C3894.04 878.034 3700.89 534.034 4398.04 534.034C4866.04 534.034 4858.04 902.034 5258.04 858.034C5589.49 821.575 5914.04 150.034 5914.04 150.034"
-    stroke="#0088E8"
-    stroke-width="200"
-    stroke-linecap="round"
-  />
+  {/* 🔴 SVG decorativo — inferior direito */}
+  <div className="absolute bottom-6 right-6 z-10 pointer-events-none select-none opacity-70">
+    <svg className="w-32 md:w-48 lg:w-64 h-auto" viewBox="0 0 693 753" fill="none">
+      <path
+        d="M50.3785 252.207C44.567 164.133 109.205 112.226 188.378 73.2074C307.476 14.5132 415.322 76.5871 516.378 162.707C562.939 202.386 588.954 229.621 613.378 285.707C651.735 373.787 652.069 443.774 613.378 531.707C582.268 602.413 550.11 646.156 479.378 677.207C372.269 724.229 245.064 708.531 188.378 606.207C151.003 538.74 214.895 481.135 188.378 408.707C160.365 332.19 55.7434 333.515 50.3785 252.207Z"
+        fill="#FF0000"
+      />
+    </svg>
+  </div>
 
-              </svg>
-            </div>
+  {/* 🔵 SVG decorativo — superior esquerdo */}
+  <div className="absolute top-6 left-6 z-10 pointer-events-none select-none opacity-60">
+    <svg className="w-20 md:w-28 lg:w-36 h-auto" viewBox="0 0 693 753" fill="none">
+      <path
+        d="M50.3785 252.207C44.567 164.133 109.205 112.226 188.378 73.2074..."
+        fill="#0088E8"
+      />
+    </svg>
+  </div>
 
-            {/* texto descrição */}
-            <div className="absolute bottom-0 right-0 z-20 w-full md:w-[40rem] lg:w-[60rem] p-10 flex justify-end">
-              <p className="  text-justify font-syne font-bold  text-base md:text-lg lg:text-3xl p-3   text-terciaria ">
-                {" "}
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos,
-                consequatur? Laudantium rem ad quos at, quasi enim saepe rerum
-                eius eligendi officiis ratione voluptate maxime dolorum labore
-                inventore doloribus iste?
-              </p>
-            </div>
-          </div>
+</section>
+
+  {/* SEGUNDA PARTE */}
+  <section className="relative w-screen h-screen shrink-0 flex items-center justify-center bg-white">
+
+    {/* Seu novo SVG */}
+    <svg
+      viewBox="0 0 500 500"
+      className="w-[400px] md:w-[500px] lg:w-[600px]"
+      fill="none"
+    >
+      <circle
+        cx="250"
+        cy="250"
+        r="200"
+        stroke="#0088E8"
+        strokeWidth="8"
+      />
+      <text
+        x="50%"
+        y="50%"
+        textAnchor="middle"
+        dy=".3em"
+        className="fill-primaria font-bold text-2xl"
+      >
+        Segunda Parte
+      </text>
+    </svg>
+
+  </section>
+
+</div>
 
 
           {/* TELA 2 */}
