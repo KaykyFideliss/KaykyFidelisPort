@@ -27,7 +27,7 @@ const videos = [
     icons: {
       site: FaLink,
       repo: FiGithub,
-    },
+      },
   },
   {
     id: 3,
@@ -77,8 +77,8 @@ const Gallery = () => {
 
 
       {/* CONTEÚDO */}
-  <div className="relative flex justify-center my-36  ">
-    <h1 className="text-xl md:text-9xl font-syne font-extrabold text-primaria">
+  <div className="relative flex justify-center my-10  ">
+    <h1 className="text-4xl md:text-9xl font-syne font-extrabold text-primaria">
       PROJETOS
     </h1>
   </div>
@@ -132,7 +132,7 @@ const Gallery = () => {
 >
 
                 {/* Botão Site */}
-                <a
+                <link
                   href={video.site}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -147,10 +147,10 @@ const Gallery = () => {
                   "
                 >
                   Saber mais
-                </a>
+                </link>
 
                 {/* Botão GitHub */}
-                <a
+                <link
                   href={video.repo}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -163,7 +163,7 @@ const Gallery = () => {
                   "
                 >
                   <video.icons.repo size={20} />
-                </a>
+                </link>
               </div>
             </div>
 

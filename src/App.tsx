@@ -1,7 +1,9 @@
-// App.tsx
 "use client"
 
 import { useState, useEffect } from "react"
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+
 import Preloader from "./components/Preloader"
 import Header from "./components/header"
 import HeroSection from "./components/hero-section"
@@ -13,42 +15,58 @@ import Footer from "./components/Footer"
 import WorkTogether from "./components/WorkTogether"
 import HorizontalScroll from "./components/HorizontalScroll"
 
+gsap.registerPlugin(ScrollTrigger)
+
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true)
 
-  // Opção 1: Timer simples (como você já tem)
+  // Timer do preloader
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false)
-    }, 3500) // Tempo do preloader + animação de saída
+    }, 3500)
 
     return () => clearTimeout(timer)
   }, [])
 
+  // 🔥 Travar / liberar scroll
+  useEffect(() => {
+    document.body.style.overflow = isLoading ? "hidden" : "auto"
+  }, [isLoading])
+
+  // 🔥 Refresh GSAP após loading
+  useEffect(() => {
+    if (!isLoading) {
+      requestAnimationFrame(() => {
+        ScrollTrigger.refresh()
+      })
+    }
+  }, [isLoading])
 
   return (
- <main className="relative min-h-screen bg-blue-400">
-  
-  {isLoading && <Preloader />}
+    <main className="relative min-h-screen bg-blue-400">
 
-  <div
-    className={`transition-opacity duration-500 ${
-      isLoading ? "opacity-0" : "opacity-100"
-    }`}
-  >
-    <Header />
+      {isLoading && <Preloader />}
 
-    <div className="relative">
-      <HeroSection />
-      <AboutSection />
-      <Projects />
-      <Gallery />
-      <Stacks />
-      <HorizontalScroll />
-      <WorkTogether />
-      <Footer />
-    </div>
-  </div>
-</main>
+      <div
+        className={`transition-opacity duration-500 ${
+          isLoading ? "opacity-0 pointer-events-none" : "opacity-100"
+        }`}
+      >
+        <Header />
+
+        <div className="relative">
+          <HeroSection />
+          <AboutSection />
+          <Projects />
+          <Gallery />
+          <Stacks />
+          <HorizontalScroll />
+          <WorkTogether />
+          <Footer />
+        </div>
+      </div>
+
+    </main>
   )
 }

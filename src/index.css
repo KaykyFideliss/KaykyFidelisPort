@@ -28,3 +28,8 @@ body{
 ::-webkit-scrollbar-thumb:hover {
   background-color: #3D94FF;
 }
+
+#eye-left, #eye-right {
+  transform-origin: center;
+  transform-box: fill-box;
+}
