@@ -14,7 +14,7 @@ const videos = [
     title: "ACQUALIFE",
     url: "https://res.cloudinary.com/de4ncki8u/video/upload/v1762101934/acqualife_1_vy4l5i.mp4",
     site: "https://acqualife.vercel.app",
-    path: "/Pages/Acqualife",
+    path: "/Acqualife",
     repo: "https://github.com/KaykyFideliss/Website-Acqualife",
     icons: {
       site: FaLink,
@@ -26,7 +26,7 @@ const videos = [
     title: "HEALTHY WALLET",
     url: "https://res.cloudinary.com/de4ncki8u/video/upload/v1769467639/Vídeo_sem_título_Feito_com_o_Clipchamp_18_kw10ck.mp4",
     site: "https://healthy-wallet.vercel.app",
-   path: "/Pages/Acqualife",
+   path: "/Acqualife",
     repo: "https://github.com/KaykyFideliss/healthy-wallet-project",
     icons: {
       site: FaLink,
@@ -38,7 +38,7 @@ const videos = [
     title: "ENVIRONMENTAL DISASTER",
     url: "https://res.cloudinary.com/de4ncki8u/video/upload/v1762102275/E.D-video_z3qowq.mp4",
     site: "https://envirolmental-disaster.vercel.app",
-   path: "/Pages/Acqualife",
+   path: "/Acqualife",
     repo: "https://github.com/KaykyFideliss/Envirolmental-Disaster-Responsivo",
     icons: {
       site: FaLink,
@@ -50,7 +50,7 @@ const videos = [
     title: "PORTFÓLIO 1.0",
     url: "https://res.cloudinary.com/de4ncki8u/video/upload/v1770949788/Port1.0_bvnggz.mp4",
     site: "https://portifolio-kayky-fidelis.vercel.app",
-   path: "/Pages/Acqualife",
+   path: "/Acqualife",
     repo: "https://github.com/KaykyFideliss/Portifolio",
     icons: {
       site: FaLink,
