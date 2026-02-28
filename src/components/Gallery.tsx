@@ -4,6 +4,8 @@ import { FaLink } from "react-icons/fa";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+import { Link } from "react-router-dom";
+
 gsap.registerPlugin(ScrollTrigger);
 
 const videos = [
@@ -12,6 +14,7 @@ const videos = [
     title: "ACQUALIFE",
     url: "https://res.cloudinary.com/de4ncki8u/video/upload/v1762101934/acqualife_1_vy4l5i.mp4",
     site: "https://acqualife.vercel.app",
+    path: "/Pages/Acqualife",
     repo: "https://github.com/KaykyFideliss/Website-Acqualife",
     icons: {
       site: FaLink,
@@ -23,6 +26,7 @@ const videos = [
     title: "HEALTHY WALLET",
     url: "https://res.cloudinary.com/de4ncki8u/video/upload/v1769467639/Vídeo_sem_título_Feito_com_o_Clipchamp_18_kw10ck.mp4",
     site: "https://healthy-wallet.vercel.app",
+   path: "/Pages/Acqualife",
     repo: "https://github.com/KaykyFideliss/healthy-wallet-project",
     icons: {
       site: FaLink,
@@ -34,6 +38,7 @@ const videos = [
     title: "ENVIRONMENTAL DISASTER",
     url: "https://res.cloudinary.com/de4ncki8u/video/upload/v1762102275/E.D-video_z3qowq.mp4",
     site: "https://envirolmental-disaster.vercel.app",
+   path: "/Pages/Acqualife",
     repo: "https://github.com/KaykyFideliss/Envirolmental-Disaster-Responsivo",
     icons: {
       site: FaLink,
@@ -45,6 +50,7 @@ const videos = [
     title: "PORTFÓLIO 1.0",
     url: "https://res.cloudinary.com/de4ncki8u/video/upload/v1770949788/Port1.0_bvnggz.mp4",
     site: "https://portifolio-kayky-fidelis.vercel.app",
+   path: "/Pages/Acqualife",
     repo: "https://github.com/KaykyFideliss/Portifolio",
     icons: {
       site: FaLink,
@@ -121,20 +127,20 @@ const Gallery = () => {
 
               {/* OVERLAY */}
            <div
-  className="
-    absolute inset-0
-    flex items-center justify-center gap-4
-    opacity-0 group-hover:opacity-100
-    transition-all duration-700
-    backdrop-blur-sm
-    bg-black/40
-  "
->
+            className="
+              absolute inset-0
+              flex items-center justify-center gap-4
+              opacity-0 group-hover:opacity-100
+              transition-all duration-700
+              backdrop-blur-sm
+              bg-black/40
+            "
+          >
 
                 {/* Botão Site */}
-                <link
-                  href={video.site}
-                  target="_blank"
+                <Link 
+                to={video.path}
+                 
                   rel="noopener noreferrer"
                   className="
                     px-6 py-3
@@ -147,10 +153,10 @@ const Gallery = () => {
                   "
                 >
                   Saber mais
-                </link>
+                </Link>
 
                 {/* Botão GitHub */}
-                <link
+                <a
                   href={video.repo}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -163,7 +169,7 @@ const Gallery = () => {
                   "
                 >
                   <video.icons.repo size={20} />
-                </link>
+                </a>
               </div>
             </div>
 
