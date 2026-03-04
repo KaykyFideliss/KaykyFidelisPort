@@ -2,11 +2,11 @@
 "use client"
 import React from 'react'
 import { useState, useEffect } from "react";
-import { FaLink, FaPhp } from "react-icons/fa";
+import { FaLink } from "react-icons/fa";
 import Stacks from '../components/frase';
 import { FaReact, FaChartBar ,FaGithub } from "react-icons/fa";
-import { SiTailwindcss, SiFramer,SiArduino  } from "react-icons/si";
-import { DiMysql } from "react-icons/di";
+import { SiTailwindcss, SiFramer } from "react-icons/si";
+import { SiPostgresql,SiSupabase  } from "react-icons/si";
 import { MdArrowOutward } from "react-icons/md";
 import { Github } from 'lucide-react';
 
@@ -15,8 +15,8 @@ const Acqualife = () => {
 
   const infos = [
     {
-      title: "ACQUALIFE",
-      description: "O Acqualife é um sistema automatizado que capta, filtra e reutiliza água da chuva para fins não potáveis, como descarga, limpeza e irrigação, em residências, promovendo economia, sustentabilidade e consciência ambiental.",
+      title: "HEALTHY WALLET",
+      description: "O Healthy Wallet é uma aplicação web de controle financeiro pessoal desenvolvida para ajudar usuários a organizarem suas contas e despesas de forma simples, visual e eficiente. A plataforma permite a criação de tabelas financeiras personalizadas, onde o usuário pode cadastrar contas com valor, data de vencimento e número de parcelas, facilitando o acompanhamento das obrigações financeiras do dia a dia.",
         icons: {
             site: FaLink,
             repo: FaGithub,
@@ -25,14 +25,14 @@ const Acqualife = () => {
           stacks:{
             stack1: "React",
             stack2: "Tailwind CSS",
-            stack3: "Api REST",
-            Stacks4:"C#",
+            stack3: "Supabase",
+            Stacks4:"PostegreSQL",
           },
 
-          MainVideo:"https://res.cloudinary.com/de4ncki8u/video/upload/v1772291888/Design_sem_nome_2_vhax2w.mp4",
+          MainVideo:"https://res.cloudinary.com/de4ncki8u/video/upload/v1769467639/Vídeo_sem_título_Feito_com_o_Clipchamp_18_kw10ck.mp4",
 
-          mockupLeft:"/images/project/acqualife/mockup.png",
-          mockupRight:"/images/project/acqualife/mockup.png",
+          mockupLeft:"/images/project/Healthy.png",
+          mockupRight:"/images/project/Healthy.png",
 
     },
 
@@ -41,9 +41,9 @@ const Acqualife = () => {
 const challenger = [
   {
     title: "DESAFIOS",
-    descriptionOne: "Com o Acqualife, enfrentei alguns desafios relevantes ao longo do desenvolvimento. Inicialmente, o projeto possuía um escopo bem definido, mas durante a execução percebemos a necessidade de pivotar a ideia e transformar a solução em uma aplicação web, o que exigiu replanejamento técnico e reorganização das responsabilidades da equipe.",
-    descriptionTwo:" Além disso, tive dificuldades na integração com os dispositivos de IoT, principalmente relacionadas a falhas nas requisições e inconsistências na comunicação entre o hardware e a aplicação. Após diversos testes e ajustes — especialmente na estrutura das requisições e no tratamento de erros — consegui estabilizar a comunicação, garantindo maior confiabilidade na troca de dados em tempo real.",
-    descriptionThree:"        Essa experiência foi importante para desenvolver minha capacidade de adaptação, resolução de problemas e análise técnica em cenários com integração entre software e hardware.",
+    descriptionOne: "No desenvolvimento do Healthy Wallet, enfrentei desafios principalmente relacionados à modelagem de dados e à consistência das regras de negócio. Um dos principais problemas surgiu na lógica de cálculos financeiros, especialmente na atualização correta do total restante após exclusões ou pagamentos parciais. Inicialmente, havia inconsistências entre os valores armazenados no banco e os valores exibidos no dashboard, o que impactava diretamente os gráficos e indicadores financeiros.",
+    descriptionTwo:"Outro desafio relevante foi o tratamento de datas de vencimento. Durante a implementação do sistema de status (em dia, próximo do vencimento e vencido), identifiquei divergências causadas por timezone, onde a data salva no banco aparecia um dia anterior no frontend. Isso exigiu uma análise detalhada da conversão de datas e da manipulação de objetos Date no JavaScript para garantir precisão no cálculo dos dias restantes.",
+    descriptionThree:"Esses obstáculos foram fundamentais para aprimorar minha capacidade de depuração, entendimento de regras financeiras e controle de sincronização entre frontend e banco de dados.",
   }
 ]
 
@@ -51,9 +51,9 @@ const solution =[
   {
 
     title: "SOLUÇÃO",
-    descriptionOne: "Para solucionar os problemas enfrentados no desenvolvimento do Acqualife, reestruturei a organização do estado da aplicação e a comunicação com os dispositivos IoT. No frontend, utilizei Hooks do React para centralizar os estados críticos, especialmente os dados recebidos em tempo real. Com o useEffect, controlei o ciclo de vida das requisições para evitar execuções desnecessárias, enquanto o useState manteve a interface sincronizada com as atualizações dos sensores.",
-    descriptionTwo:"Também implementei a Context API para eliminar o prop drilling e centralizar informações globais, como dados dos dispositivos e status de conexão. Isso tornou a arquitetura mais escalável, facilitou a manutenção e deixou o código mais organizado após a transição para aplicação web.",
-    descriptionThree:"Na integração com o backend e os dispositivos, padronizei as requisições via fetch, estruturando melhor os endpoints, validando respostas e fortalecendo o tratamento de erros com try/catch e verificação de status HTTP. Com isso, estabilizei a comunicação entre hardware e software, reduzi inconsistências e aumentei a confiabilidade da troca de dados em tempo real, garantindo uma experiência mais fluida e responsiva para os usuários do Acqualife.",
+    descriptionOne: "Para resolver as inconsistências financeiras, revisei a lógica de cálculo do sistema e ajustei a forma como o valor total das contas era tratado. Passei a considerar o valor armazenado como o saldo real restante, eliminando multiplicações indevidas e garantindo que exclusões e pagamentos refletissem imediatamente no dashboard e nos gráficos. Também reorganizei as consultas ao Supabase para assegurar que as deleções respeitassem o relacionamento entre contas e pagamentos, evitando dados “órfãos” no banco.",
+    descriptionTwo:"No tratamento das datas, implementei uma padronização utilizando Date.UTC para evitar impactos de timezone na comparação entre a data atual e o vencimento. Isso estabilizou o sistema de cores e garantiu que o status das contas fosse exibido corretamente, independentemente do fuso horário do usuário.",
+    descriptionThree:"Além disso, estruturei melhor o gerenciamento de estado no React, garantindo que alterações no banco fossem refletidas automaticamente na interface. Essa reorganização tornou o dashboard mais confiável, os gráficos mais precisos e a aplicação mais consistente do ponto de vista de regras de negócio e experiência do usuário..",
   }
 ]
 
@@ -66,11 +66,8 @@ const Tools = [
      
       Recharts: { icon:FaChartBar  , label: "Recharts" },
       
-     
-        mysql: { icon: DiMysql, label: "MySQL" },
-      php: { icon: FaPhp, label: "PHP" },
-
-        arduino: { icon: SiArduino, label: "Arduino" },
+     Supabase: { icon: SiSupabase , label: "Supabase" },
+      PostGreeSql : { icon: SiPostgresql, label: "PostgreSQL" },
         framer: { icon: SiFramer, label: "Framer Motion" },
         github: { icon: FaGithub, label: "GitHub" },  
         
@@ -81,7 +78,7 @@ const Links = [
 
   {
     Github: "https://github.com/KaykyFideliss/Website-Acqualife",
-    Preview: "https://acqualife.vercel.app",
+    Preview: "https://healthy-wallet.vercel.app",
   },
       
 ]
@@ -171,7 +168,7 @@ const Links = [
       {/* Título */}
       <div className="w-full lg:w-1/3 text-center lg:text-left">
         <h1 className="text-terciaria font-syne font-extrabold text-4xl md:text-5xl">
-          {Tools[0].title}
+          {challenger[0].title}
           <span className="text-primaria">.</span>
         </h1>
       </div>

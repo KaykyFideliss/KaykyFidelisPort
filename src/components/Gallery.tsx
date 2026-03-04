@@ -26,7 +26,7 @@ const videos = [
     title: "HEALTHY WALLET",
     url: "https://res.cloudinary.com/de4ncki8u/video/upload/v1769467639/Vídeo_sem_título_Feito_com_o_Clipchamp_18_kw10ck.mp4",
     site: "https://healthy-wallet.vercel.app",
-   path: "/Acqualife",
+   path: "/Healthy",
     repo: "https://github.com/KaykyFideliss/healthy-wallet-project",
     icons: {
       site: FaLink,
