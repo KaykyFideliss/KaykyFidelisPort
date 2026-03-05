@@ -2,14 +2,12 @@
 "use client"
 import React from 'react'
 import { useState, useEffect } from "react";
-import { FaLink, FaPhp } from "react-icons/fa";
+import { FaLink } from "react-icons/fa";
 import Stacks from '../components/frase';
-import { FaReact, FaChartBar ,FaGithub } from "react-icons/fa";
-import { SiTailwindcss, SiFramer,SiArduino  } from "react-icons/si";
-import { DiMysql } from "react-icons/di";
+import { FaHtml5 ,FaGithub,FaCss3Alt,FaJs,FaBootstrap   } from "react-icons/fa";
+import { SiScrollreveal } from "react-icons/si";
 import { MdArrowOutward } from "react-icons/md";
 import { Github } from 'lucide-react';
-
 import { Link } from "react-router-dom";
 import { IoIosArrowForward } from "react-icons/io";
 
@@ -17,24 +15,26 @@ const Acqualife = () => {
 
   const infos = [
     {
-      title: "ACQUALIFE",
-      description: "O Acqualife é um sistema automatizado que capta, filtra e reutiliza água da chuva para fins não potáveis, como descarga, limpeza e irrigação, em residências, promovendo economia, sustentabilidade e consciência ambiental.",
+      title: "ENVIRONMENTAL DISASTER",
+      description: "O site ENVIROLMENTAL DISASTER (Projeto E.D) é uma plataforma educativa sobre desastres ambientais, com foco em conscientização e educação.",
         icons: {
             site: FaLink,
             repo: FaGithub,
           },
 
           stacks:{
-            stack1: "React",
-            stack2: "Tailwind CSS",
-            stack3: "Api REST",
-            Stacks4:"C#",
+            stack1: "HTML",
+            stack2: "CSS",
+            stack3: "JS",
+            stack4: "Bootstrap",
+            stack5: "ScrollReveal",
+            
           },
 
-          MainVideo:"https://res.cloudinary.com/de4ncki8u/video/upload/v1772291888/Design_sem_nome_2_vhax2w.mp4",
+          MainVideo:"https://res.cloudinary.com/de4ncki8u/video/upload/v1762102275/E.D-video_z3qowq.mp4",
 
-          mockupLeft:"/images/project/acqualife/mockup.png",
-          mockupRight:"/images/project/acqualife/mockup.png",
+          mockupLeft:"/images/project/Disaster/disaster.png",
+          mockupRight:"/images/project/Disaster/videoaula.png",
 
     },
 
@@ -43,9 +43,9 @@ const Acqualife = () => {
 const challenger = [
   {
     title: "DESAFIOS",
-    descriptionOne: "Com o Acqualife, enfrentei alguns desafios relevantes ao longo do desenvolvimento. Inicialmente, o projeto possuía um escopo bem definido, mas durante a execução percebemos a necessidade de pivotar a ideia e transformar a solução em uma aplicação web, o que exigiu replanejamento técnico e reorganização das responsabilidades da equipe.",
-    descriptionTwo:" Além disso, tive dificuldades na integração com os dispositivos de IoT, principalmente relacionadas a falhas nas requisições e inconsistências na comunicação entre o hardware e a aplicação. Após diversos testes e ajustes — especialmente na estrutura das requisições e no tratamento de erros — consegui estabilizar a comunicação, garantindo maior confiabilidade na troca de dados em tempo real.",
-    descriptionThree:"        Essa experiência foi importante para desenvolver minha capacidade de adaptação, resolução de problemas e análise técnica em cenários com integração entre software e hardware.",
+    descriptionOne: "No desenvolvimento do Environmental Disaster, o maior desafio esteve na criação da página de videoaulas, especialmente por ter sido meu primeiro contato prático com JavaScript. Até então, minha experiência era predominantemente voltada para HTML e CSS, com foco em estruturação e estilização de interfaces estáticas. Ao iniciar a implementação da seção de vídeos, precisei compreender conceitos fundamentais como manipulação do DOM, eventos de clique e alteração dinâmica de conteúdo, o que representou uma mudança significativa na forma como eu desenvolvia páginas.",
+    descriptionTwo:"Durante a implementação, enfrentei dificuldades na lógica responsável pela troca das videoaulas. Inicialmente, o player não atualizava corretamente o conteúdo ao receber uma nova interação do usuário, e em alguns testes o vídeo permanecia o mesmo mesmo após a seleção de outra aula. Isso evidenciou lacunas no meu entendimento sobre como manipular atributos dinamicamente, especialmente o controle do src do elemento responsável pela exibição do vídeo.",
+    descriptionThree:"Outro obstáculo relevante foi o entendimento do ciclo de carregamento da página e da execução dos scripts. Em determinadas situações, o JavaScript era executado antes que os elementos do DOM estivessem completamente carregados, gerando erros e comportamentos inesperados. Além disso, houve uma curva de aprendizado significativa na organização da lógica do código, para evitar repetições e garantir que o comportamento da página fosse previsível e escalável.",
   }
 ]
 
@@ -53,9 +53,9 @@ const solution =[
   {
 
     title: "SOLUÇÃO",
-    descriptionOne: "Para solucionar os problemas enfrentados no desenvolvimento do Acqualife, reestruturei a organização do estado da aplicação e a comunicação com os dispositivos IoT. No frontend, utilizei Hooks do React para centralizar os estados críticos, especialmente os dados recebidos em tempo real. Com o useEffect, controlei o ciclo de vida das requisições para evitar execuções desnecessárias, enquanto o useState manteve a interface sincronizada com as atualizações dos sensores.",
-    descriptionTwo:"Também implementei a Context API para eliminar o prop drilling e centralizar informações globais, como dados dos dispositivos e status de conexão. Isso tornou a arquitetura mais escalável, facilitou a manutenção e deixou o código mais organizado após a transição para aplicação web.",
-    descriptionThree:"Na integração com o backend e os dispositivos, padronizei as requisições via fetch, estruturando melhor os endpoints, validando respostas e fortalecendo o tratamento de erros com try/catch e verificação de status HTTP. Com isso, estabilizei a comunicação entre hardware e software, reduzi inconsistências e aumentei a confiabilidade da troca de dados em tempo real, garantindo uma experiência mais fluida e responsiva para os usuários do Acqualife.",
+    descriptionOne: "Para superar esses desafios, iniciei um aprofundamento direcionado nos fundamentos de JavaScript aplicados ao frontend, com foco em seleção de elementos, eventos e manipulação de propriedades. Busquei compreender de forma mais estruturada como o navegador interpreta scripts e como a interação do usuário pode ser capturada e transformada em ações dinâmicas na interface.",
+    descriptionTwo:"Reestruturei a página de videoaulas separando claramente a camada de exibição do conteúdo da lógica responsável pela atualização do vídeo. Implementei uma função específica para alterar dinamicamente o atributo src do player sempre que uma nova aula fosse selecionada, centralizando a lógica de atualização em um único ponto. Essa reorganização eliminou inconsistências, reduziu redundâncias e tornou o código mais limpo e compreensível.",
+    descriptionThree:"Também ajustei o momento de execução do script para garantir que ele fosse disparado apenas após o carregamento completo do DOM, estabilizando o comportamento da página. Como resultado, a troca de videoaulas passou a funcionar corretamente, a experiência do usuário tornou-se mais fluida e o projeto ganhou maior consistência técnica. Esse processo foi fundamental para consolidar minha base em JavaScript e ampliar minha capacidade de desenvolver aplicações interativas com maior segurança e organização estrutural.",
   }
 ]
 
@@ -63,18 +63,11 @@ const Tools = [
   {
     title: "STACKS",
     icons: {
-      react: { icon: FaReact, label: "React" },
-     tailwind: { icon: SiTailwindcss, label: "Tailwind CSS" },
-     
-      Recharts: { icon:FaChartBar  , label: "Recharts" },
-      
-     
-        mysql: { icon: DiMysql, label: "MySQL" },
-      php: { icon: FaPhp, label: "PHP" },
-
-        arduino: { icon: SiArduino, label: "Arduino" },
-        framer: { icon: SiFramer, label: "Framer Motion" },
-        github: { icon: FaGithub, label: "GitHub" },  
+      HTML: { icon: FaHtml5, label: "HTML" },
+      CSS: { icon: FaCss3Alt, label: "CSS" },
+    JS: { icon: FaJs, label: "JavaScript" },
+Bootstrap: { icon: FaBootstrap, label: "Bootstrap" },
+    ScrollReveal: { icon: SiScrollreveal, label: "ScrollReveal" },
         
     }
   }
@@ -82,8 +75,8 @@ const Tools = [
 const Links = [
 
   {
-    Github: "https://github.com/KaykyFideliss/Website-Acqualife",
-    Preview: "https://acqualife.vercel.app",
+    Github: "https://github.com/KaykyFideliss/Envirolmental-Disaster-Responsivo",
+    Preview: "https://envirolmental-disaster.vercel.app",
   },
       
 ]
@@ -123,6 +116,7 @@ const Links = [
 
   </div>
 </div>
+
 
   {/* HERO */}
   <div className="w-full max-w-7xl px-6 flex flex-col items-center gap-4">

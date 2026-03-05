@@ -10,6 +10,8 @@ import { SiPostgresql,SiSupabase  } from "react-icons/si";
 import { MdArrowOutward } from "react-icons/md";
 import { Github } from 'lucide-react';
 
+import { Link } from "react-router-dom";
+import { IoIosArrowForward } from "react-icons/io";
 
 const Acqualife = () => {
 
@@ -31,8 +33,8 @@ const Acqualife = () => {
 
           MainVideo:"https://res.cloudinary.com/de4ncki8u/video/upload/v1769467639/Vídeo_sem_título_Feito_com_o_Clipchamp_18_kw10ck.mp4",
 
-          mockupLeft:"/images/project/Healthy.png",
-          mockupRight:"/images/project/Healthy.png",
+          mockupLeft:"/images/project/healthy/pie.png",
+          mockupRight:"/images/project/healthy/aprenda.png",
 
     },
 
@@ -53,7 +55,7 @@ const solution =[
     title: "SOLUÇÃO",
     descriptionOne: "Para resolver as inconsistências financeiras, revisei a lógica de cálculo do sistema e ajustei a forma como o valor total das contas era tratado. Passei a considerar o valor armazenado como o saldo real restante, eliminando multiplicações indevidas e garantindo que exclusões e pagamentos refletissem imediatamente no dashboard e nos gráficos. Também reorganizei as consultas ao Supabase para assegurar que as deleções respeitassem o relacionamento entre contas e pagamentos, evitando dados “órfãos” no banco.",
     descriptionTwo:"No tratamento das datas, implementei uma padronização utilizando Date.UTC para evitar impactos de timezone na comparação entre a data atual e o vencimento. Isso estabilizou o sistema de cores e garantiu que o status das contas fosse exibido corretamente, independentemente do fuso horário do usuário.",
-    descriptionThree:"Além disso, estruturei melhor o gerenciamento de estado no React, garantindo que alterações no banco fossem refletidas automaticamente na interface. Essa reorganização tornou o dashboard mais confiável, os gráficos mais precisos e a aplicação mais consistente do ponto de vista de regras de negócio e experiência do usuário..",
+    descriptionThree:"Além disso, estruturei melhor o gerenciamento de estado no React, garantindo que alterações no banco fossem refletidas automaticamente na interface. Essa reorganização tornou o dashboard mais confiável, os gráficos mais precisos e a aplicação mais consistente do ponto de vista de regras de negócio e experiência do usuário.",
   }
 ]
 
@@ -84,6 +86,40 @@ const Links = [
 ]
   return (
 <section className="w-full bg-WHITE flex flex-col items-center mt-20 overflow-hidden">
+
+   {/* Voltar / Breadcrumb */}
+<div className="flex  items-center gap-2 w-full 
+                px-4 md:px-8 lg:pl-12 
+                h-auto min-h-[60px]">
+
+  {/* Botão Voltar */}
+  <Link to="/">
+    <h1 className="bg-white f text-center text-sm md:text-base lg:text-lg
+                   px-4 py-2
+                   font-syne font-bold border
+                   border-terciaria
+                   hover:bg-primaria hover:text-terciaria
+                   duration-200 hover:scale-105
+                   rounded-xl transition-all">
+      Voltar
+    </h1>
+  </Link>
+
+  {/* Breadcrumb */}
+  <div className="flex items-center gap-2">
+
+    <p className="font-syne text-sm md:text-base text-terciaria/75">
+      Project
+    </p>
+
+    <IoIosArrowForward className="text-terciaria/75 text-sm md:text-base" />
+
+    <p className="font-syne text-xs md:text-base font-bold text-primaria break-words word-break">
+      {infos[0].title}
+    </p>
+
+  </div>
+</div>
 
   {/* HERO */}
   <div className="w-full max-w-7xl px-6 flex flex-col items-center gap-4">
