@@ -62,18 +62,73 @@ const videos = [
 
 const Gallery = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const cardsRef = useRef<HTMLDivElement[]>([]);
 
- useLayoutEffect(() => {
-  const ctx = gsap.context(() => {
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      // Animação do título
+      if (titleRef.current) {
+        gsap.fromTo(titleRef.current,
+          {
+            opacity: 0,
+            filter: "blur(20px)",
+            y: 50
+          },
+          {
+            opacity: 1,
+            filter: "blur(0px)",
+            y: 0,
+            duration: 1.2,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: titleRef.current,
+              start: "top 85%",
+              end: "bottom 60%",
+              toggleActions: "play none none reverse",
+              once: false
+            }
+          }
+        );
+      }
 
+      // Animação dos cards
+      cardsRef.current.forEach((card, index) => {
+        if (!card) return;
+        
+        gsap.fromTo(card,
+          {
+            opacity: 0,
+            filter: "blur(20px)",
+            x: index % 2 === 0 ? -120 : 120, // Alterna a direção da animação
+    
+            scale: 0.95
+          },
+          {
+            opacity: 1,
+            filter: "blur(0px)",
+            x: 0,
+           
+            scale: 1,
+            duration: 1.2,
+            delay: index * 0.1, // Pequeno atraso entre os cards
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: card,
+              start: "top 85%",
+              end: "bottom 60%",
+              toggleActions: "play none none reverse",
+              once: false,
+            }
+          }
+        );
+      });
 
-    ScrollTrigger.refresh(); // 🔥 ESSENCIAL
-  }, sectionRef);
+      ScrollTrigger.refresh(); // 🔥 ESSENCIAL
+    }, sectionRef);
 
-  return () => ctx.revert();
-}, []);
-
-
+    return () => ctx.revert();
+  }, []);
 
   return (
     <section
@@ -81,18 +136,27 @@ const Gallery = () => {
       className="w-full bg-white flex flex-col justify-center overflow-x-hidden pb-20"
     >
 
-
       {/* CONTEÚDO */}
-  <div className="relative flex justify-center my-10  ">
-    <h1 className="text-4xl md:text-9xl font-syne font-extrabold text-primaria">
-      PROJETOS
-    </h1>
-  </div>
+      <div className="relative flex justify-center my-10">
+        <h1 
+          ref={titleRef}
+          className="text-4xl md:text-9xl font-syne font-extrabold text-primaria opacity-0"
+          style={{ filter: "blur(20px)" }}
+        >
+          PROJETOS
+        </h1>
+      </div>
      
-
       <div className="projects-grid w-[95%] md:w-[90%] hn mx-auto grid grid-cols-1 md:grid-cols-2 gap-20">
-        {videos.map((video) => (
-          <div key={video.id} className="  space-y-4">
+        {videos.map((video, index) => (
+          <div 
+            key={video.id} 
+            className="space-y-4 opacity-0"
+            ref={el => {
+              if (el) cardsRef.current[index] = el;
+            }}
+            style={{ filter: "blur(20px)" }}
+          >
             
             {/* CARD */}
             <div className="relative group rounded-2xl overflow-hidden border-2 border-terciaria/5">
@@ -126,21 +190,19 @@ const Gallery = () => {
               )}
 
               {/* OVERLAY */}
-           <div
-            className="
-              absolute inset-0
-              flex items-center justify-center gap-4
-              opacity-0 group-hover:opacity-100
-              transition-all duration-700
-              backdrop-blur-sm
-              bg-black/40
-            "
-          >
-
+              <div
+                className="
+                  absolute inset-0
+                  flex items-center justify-center gap-4
+                  opacity-0 group-hover:opacity-100
+                  transition-all duration-700
+                  backdrop-blur-sm
+                  bg-black/40
+                "
+              >
                 {/* Botão Site */}
                 <Link 
-                to={video.path}
-                 
+                  to={video.path}
                   rel="noopener noreferrer"
                   className="
                     px-6 py-3
@@ -178,39 +240,12 @@ const Gallery = () => {
               <h2 className="font-syne font-extrabold text-lg md:text-2xl">
                 {video.title}
               </h2>
-
-              {/* <div className="flex items-center gap-4">
-                <a
-                  href={video.site}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="
-                    text-terciaria hover:text-secundaria
-                    hover:scale-125 transition-transform duration-300
-                  "
-                >
-                  <video.icons.site size={20} />
-                </a>
-
-                <a
-                  href={video.repo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="
-                    text-terciaria hover:text-secundaria
-                    hover:scale-125 transition-transform duration-300
-                  "
-                >
-                  <video.icons.repo size={20} />
-                </a>
-              </div> */}
             </div>
 
           </div>
         ))}
       </div>  
-  </section>
-    
+    </section>
   );
 };
 

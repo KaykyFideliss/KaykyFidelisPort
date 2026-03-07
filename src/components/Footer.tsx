@@ -55,7 +55,7 @@ const heroText = {
 export default function Footer() {
   return (
     <motion.footer
-      className="font-zalando rounded-lg w-full bg-white  "
+      className="font-zalando rounded-lg w-full bg-primaria  "
      
     >
       <div className="w-full overflow-hidden px-4 md:px-6">
@@ -92,24 +92,34 @@ export default function Footer() {
               </motion.div>
             </motion.div>
 
-            {/* LOGO */}
-            <motion.div
-              className="flex flex-col items-center gap-4 max-w-xs mx-4"
-              variants={fadeBlurUp}
-            >
-              <motion.img
-                src={logoSrc}
-                alt="Healthy Wallet Logo"
-                className="h-20 md:h-28 lg:h-32 w-auto max-w-full"
-                variants={fadeBlurUp}
-              />
-              <motion.p
-                className="text-white text-xs md:text-sm text-center px-2"
-                variants={fadeBlurUp}
-              >
-                Plataforma focada em organização financeira, clareza e decisões inteligentes
-              </motion.p>
-            </motion.div>
+      {/* LOGO */}
+<motion.div
+  className="flex flex-col items-center gap-4 max-w-xs mx-4"
+  initial={{ opacity: 0, y: 60, filter: "blur(10px)" }}
+  animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+  transition={{ duration: 0.8, ease: "easeOut" }}
+>
+  <svg
+    width={200}
+    viewBox="0 0 246 302"
+    fill="#ffff"
+    stroke="#ffff"
+    className="text-white"
+  >
+    <path
+      d="M1.65906 206.269L36.6591 3.26883H80.6591L64.6591 93.2688L94.6591 3.26883L124.659 45.2688L80.6591 123.769L102.659 211.269L124.659 297.269L102.659 279.269L80.6591 261.269L59.6591 123.769L46.6591 231.269L1.65906 206.269Z"
+      stroke="currentColor"
+      strokeWidth={3}
+      fill="none"
+    />
+    <path
+      d="M102.659 133.269L136.659 297.269L163.659 279.269L145.659 185.269H173.659L191.659 148.269H136.659V118.269H211.659L242.659 51.2688L136.659 59.2688L102.659 133.269Z"
+      stroke="currentColor"
+      strokeWidth={3}
+      fill="none"
+    />
+  </svg>
+</motion.div>
 
             {/* CONTATOS */}
             <motion.div 
@@ -199,9 +209,9 @@ export default function Footer() {
               <div className="relative w-full text-center">
                 <h1 className="relative z-10 text-white font-zalando font-bold 
                   leading-none text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[90px] 2xl:text-[110px]
-                  drop-shadow-[0_-10px_30px_rgba(0,0,0,0.35)]
+                  drop-shadow-[0_-10px_30px_rgba(100,100,1000,100.100)]
                   break-words overflow-visible">
-                  HEALTHY WALLET
+                  KAYKY FIDELIS
                 </h1>
 
                 {/* GLOW AJUSTADO */}

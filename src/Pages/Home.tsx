@@ -13,7 +13,7 @@ import Gallery from "../components/Gallery"
 import Stacks from "../components/frase"
 import Footer from "../components/Footer"
 import WorkTogether from "../components/WorkTogether"
-import HorizontalScroll from "../components/HorizontalScroll"
+
 
 
 gsap.registerPlugin(ScrollTrigger)
@@ -62,7 +62,7 @@ export default function Home() {
           <Projects />
           <Gallery />
           <Stacks />
-          <HorizontalScroll />
+      
           <WorkTogether />
           <Footer />
         </div>
