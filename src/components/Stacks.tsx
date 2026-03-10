@@ -66,14 +66,14 @@ const pathRef = useRef<SVGPathElement>(null);
   </svg>
 ),
       text: "Em 2026, tive contato com o GSAP (GreenSock Animation Platform), uma ferramenta que ampliou significativamente minhas possibilidades criativas no desenvolvimento front-end. Com ela, passei a criar animações mais sofisticadas, fluidas e performáticas. O uso do ScrollTrigger, em especial, permitiu explorar interações baseadas em rolagem — um recurso que sempre admirei pela capacidade de enriquecer a experiência do usuário e tornar as interfaces mais dinâmicas e envolventes.",
-      color: "bg-[#C7E1FF]",
+      color: "bg-[#7DBAFF]",
     },
       {
       id: 5,
       title: "Bootstrap",
       icon: <FaBootstrap className="text-white text-2xl md:text-3xl" />,
       text: "Tive meu primeiro contato com Bootstrap durante o curso técnico em Informática. Após a introdução do framework em aula, aprofundei-me de forma autônoma para compreender sua proposta e funcionamento. Utilizei Bootstrap em alguns projetos, o que me permitiu desenvolver uma base sólida em construção de layouts responsivos, utilização de componentes pré-estilizados e aplicação de boas práticas de estruturação de interfaces.",
-      color: "bg-[#DEEEFF]",
+      color: "bg-[#6BB0FF]",
     },
   ];
 
@@ -104,14 +104,14 @@ const pathRef = useRef<SVGPathElement>(null);
       title: "Java",
       icon: <FaJava  className="text-white text-2xl md:text-3xl" />,
       text: "Estou dando meus primeiros passos no Java e já posso dizer que encontrei uma linguagem que me inspira a ir mais longe. Por ser robusta e apresentar um nível elevado de complexidade, o Java representa exatamente o tipo de desafio que me motiva. Como gosto de superar limites, vejo nessa linguagem o ambiente ideal para entregar meu melhor e evoluir constantemente como desenvolvedor.",
-      color: "bg-[#C7E1FF]",
+      color: "bg-[#7DBAFF]",
     },
     {
       id: 5,
       title: "GitHub",
       icon: <FaGithub   className="text-white text-2xl md:text-3xl" />,
       text: "O Git e o GitHub foram verdadeiros divisores de águas na minha organização como desenvolvedor. Antes, enfrentava diversos problemas para salvar e transportar meus arquivos entre dispositivos, o que gerava retrabalho e confusão. Com o versionamento, passei a ter controle total do histórico do meu código, podendo gerenciar versões, recuperar estados anteriores e colaborar de forma muito mais eficiente. Essa ferramenta simplificou minha rotina e me deu a segurança que eu precisava para evoluir meus projetos.",
-      color: "bg-[#DEEEFF]",
+      color: "bg-[#6BB0FF]",
     },
   ];
 
@@ -166,6 +166,7 @@ useLayoutEffect(() => {
     <section
       ref={containerRef}
       className="relative w-full h-screen overflow-hidden bg-white"
+      id="stacks"
     >
       <div className="flex w-[300vw] h-screen">
 

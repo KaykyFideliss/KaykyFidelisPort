@@ -36,6 +36,7 @@ export default function Stacks() {
     <section
       ref={sectionRef}
       className="w-full min-h-screen bg-white flex items-center justify-center"
+      
     >
       <div className="flex flex-col items-center justify-center gap-3 sm:gap-4 md:gap-5 px-4">
         

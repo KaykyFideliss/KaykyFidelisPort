@@ -154,6 +154,8 @@ export default function InteractivePortrait() {
     const blob = new Blob(renderer);
 
     const isMobile = window.matchMedia("(max-width: 768px)").matches;
+  
+    
 
 const BASE_IMAGE = isMobile ? "/images/1mobile.png" : "/images/1.png";
 const HELMET_IMAGE = isMobile ? "/images/2mobile.png" : "/images/2.png";

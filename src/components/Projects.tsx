@@ -110,6 +110,7 @@ useLayoutEffect(() => {
       <section
         ref={sectionRef}
         className="relative w-full h-screen overflow-hidden bg-white"
+        id="timeline"
       >
         <div ref={wrapperRef} className="flex h-full relative" >
         {/* tela 1 + tela 2 */}
@@ -160,7 +161,7 @@ useLayoutEffect(() => {
   {/* ===================== */}
   <div className="w-screen h-screen shrink-0 relative flex items-center justify-center bg-white">
 
-    <div className="text-center px-10">
+    <div className="text-center px-10c z-10">
       <h1 className="font-syne text-terciaria text-xl opacity-0 md:opacity-0 lg:opacity-100 md:text-5xl lg:text-7xl font-extrabold">
         Conhecendo novas tecnologias
       </h1>

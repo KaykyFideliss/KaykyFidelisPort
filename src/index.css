@@ -8,6 +8,10 @@ body{
   background-color: white;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Scrollbar geral */
 ::-webkit-scrollbar {
   width: 5px;

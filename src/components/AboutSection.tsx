@@ -42,7 +42,7 @@ const AboutSection = () => {
   ]
 
   return (
-    <section className="w-full min-h-screen bg-white py-24">
+    <section className="w-full min-h-screen bg-white py-24 " id ="about">
 
       <div className="max-w-6xl  mx-auto px-6 lg:px-16">
 

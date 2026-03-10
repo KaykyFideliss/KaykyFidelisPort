@@ -2,7 +2,7 @@ import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
-const logoSrc = "img/Healthy-logo.png";
+
 
 /* ================= ANIMAÇÕES ================= */
 
@@ -69,7 +69,8 @@ export default function Footer() {
             viewport={{ once: false, amount: 0.2 }}
           >
             {/* LINKS */}
-            <motion.div className="flex flex-col gap-2 min-w-[150px]" variants={fadeBlurUp}>
+            <motion.div className="flex flex-col gap-2 min-w-[150px]" 
+            variants={fadeBlurUp}>
               <h1 className="text-white text-sm font-semibold">LINKS RÁPIDOS</h1>
 
               <motion.div variants={staggerParent}>

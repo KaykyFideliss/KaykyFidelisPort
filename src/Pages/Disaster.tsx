@@ -1,17 +1,41 @@
 
 "use client"
 import React from 'react'
+
 import { useState, useEffect } from "react";
 import { FaLink } from "react-icons/fa";
-import Stacks from '../components/frase';
 import { FaHtml5 ,FaGithub,FaCss3Alt,FaJs,FaBootstrap   } from "react-icons/fa";
 import { SiScrollreveal } from "react-icons/si";
-import { MdArrowOutward } from "react-icons/md";
-import { Github } from 'lucide-react';
 import { Link } from "react-router-dom";
 import { IoIosArrowForward } from "react-icons/io";
 
-const Acqualife = () => {
+import { motion } from "framer-motion";
+
+import gsap from "gsap";
+import { useLayoutEffect, useRef } from "react";
+
+
+const Disaster = () => {
+
+  const sectionRef = useRef(null);
+
+  useLayoutEffect(() => {
+  const ctx = gsap.context(() => {
+
+    gsap.from(sectionRef.current.children, {
+      y: 80,
+      opacity: 0,
+      filter: "blur(10px)",
+      duration: 1,
+      stagger: 0.15,
+      ease: "power3.out"
+    });
+
+  }, sectionRef);
+
+  return () => ctx.revert();
+}, []);
+
 
   const infos = [
     {
@@ -81,7 +105,11 @@ const Links = [
       
 ]
   return (
-<section className="w-full bg-WHITE flex flex-col items-center mt-20 overflow-hidden">
+<section
+  ref={sectionRef}
+  className="w-full bg-WHITE flex flex-col items-center mt-20 overflow-hidden"
+>
+
 
    {/* Voltar / Breadcrumb */}
 <div className="flex  items-center gap-2 w-full 
@@ -89,17 +117,17 @@ const Links = [
                 h-auto min-h-[60px]">
 
   {/* Botão Voltar */}
-  <Link to="/">
-    <h1 className="bg-white f text-center text-sm md:text-base lg:text-lg
-                   px-4 py-2
-                   font-syne font-bold border
-                   border-terciaria
-                   hover:bg-primaria hover:text-terciaria
-                   duration-200 hover:scale-105
-                   rounded-xl transition-all">
-      Voltar
-    </h1>
-  </Link>
+<Link to="/" state={{ scrollTo: "galleryy" }}>
+  <h1 className="bg-white text-center text-sm md:text-base lg:text-lg
+                 px-4 py-2
+                 font-syne font-bold border
+                 border-terciaria
+                 hover:bg-primaria hover:text-terciaria
+                 duration-200 hover:scale-105
+                 rounded-xl transition-all">
+    Voltar
+  </h1>
+</Link>
 
   {/* Breadcrumb */}
   <div className="flex items-center gap-2">
@@ -183,12 +211,12 @@ const Links = [
     <div className="grid md:grid-cols-2 gap-4 w-full mt-10">
       <img
         src={infos[0].mockupLeft}
-        alt="Mockup esquerdo Acqualife"
+        alt="Mockup esquerdo Disaster"
         className="w-full rounded-xl border border-terciaria/10"
       />
       <img
         src={infos[0].mockupRight}
-        alt="Mockup direito Acqualife"
+        alt="Mockup direito Disaster"
         className="w-full rounded-xl border border-terciaria/10"
       />
     </div>
@@ -278,4 +306,4 @@ const Links = [
   )
 }
 
-export default Acqualife
+export default Disaster;

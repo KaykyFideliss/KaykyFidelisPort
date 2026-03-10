@@ -13,7 +13,29 @@ import { Github } from 'lucide-react';
 import { Link } from "react-router-dom";
 import { IoIosArrowForward } from "react-icons/io";
 
+import gsap from "gsap";
+import { useLayoutEffect, useRef } from "react";
+
 const Acqualife = () => {
+
+  const sectionRef = useRef(null);
+
+  useLayoutEffect(() => {
+  const ctx = gsap.context(() => {
+
+    gsap.from(sectionRef.current.children, {
+      y: 80,
+      opacity: 0,
+      filter: "blur(10px)",
+      duration: 1,
+      stagger: 0.15,
+      ease: "power3.out"
+    });
+
+  }, sectionRef);
+
+  return () => ctx.revert();
+}, []);
 
   const infos = [
     {
@@ -79,7 +101,10 @@ const Links = [
       
 ]
   return (
-<section className="w-full bg-WHITE flex flex-col items-center mt-20 overflow-hidden">
+<section
+    ref={sectionRef}
+    className="w-full bg-WHITE flex flex-col items-center mt-20 overflow-hidden"
+  >
 
    {/* Voltar / Breadcrumb */}
 <div className="flex  items-center gap-2 w-full 
@@ -87,17 +112,17 @@ const Links = [
                 h-auto min-h-[60px]">
 
   {/* Botão Voltar */}
-  <Link to="/">
-    <h1 className="bg-white f text-center text-sm md:text-base lg:text-lg
-                   px-4 py-2
-                   font-syne font-bold border
-                   border-terciaria
-                   hover:bg-primaria hover:text-terciaria
-                   duration-200 hover:scale-105
-                   rounded-xl transition-all">
-      Voltar
-    </h1>
-  </Link>
+<Link to="/" state={{ scrollTo: "galleryy" }}>
+  <h1 className="bg-white text-center text-sm md:text-base lg:text-lg
+                 px-4 py-2
+                 font-syne font-bold border
+                 border-terciaria
+                 hover:bg-primaria hover:text-terciaria
+                 duration-200 hover:scale-105
+                 rounded-xl transition-all">
+    Voltar
+  </h1>
+</Link>
 
   {/* Breadcrumb */}
   <div className="flex items-center gap-2">

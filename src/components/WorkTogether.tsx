@@ -21,14 +21,15 @@ const WorkTogether = () => {
   ]
 
   return (
-    <section className="bg-white h-screen w-full">
+    <section className="bg-white h-screen w-full"
+    id="contact">
       <div
         className="
           w-full h-full 
-          flex flex-col lg:flex-row   /* MOBILE → coluna | DESKTOP → linha */
+          flex flex-col lg:flex-row   
           justify-center items-center 
           px-6 md:px-10 lg:px-16
-          gap-12 lg:gap-52            /* gap menor no mobile */
+          gap-12 lg:gap-52         
         "
       >
         
