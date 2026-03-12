@@ -148,7 +148,7 @@ useLayoutEffect(() => {
     </div>
 
     {/* Texto descrição */}
-    <div className="absolute bottom-0 right-0 z-20 w-full md:w-[50rem] lg:w-[60rem] md:pr-10 md:pb-10  flex justify-end">
+    <div className="absolute bottom-0 right-0 z-20 w-full md:w-[50rem] lg:w-[60rem] md:pr-10 md:pb-10  flex justify-start">
       <p className="text-justify font-syne font-bold text-base md:text-lg lg:text-3xl p-3 text-terciaria">
      Sou um desenvolvedor Frontend focado em criar interfaces modernas, responsivas e altamente performáticas. Transformo ideias em experiências digitais intuitivas, combinando design estratégico, animações fluidas e código limpo. Tenho especial atenção à usabilidade, acessibilidade e aos detalhes que elevam a experiência do usuário.
       </p>
@@ -159,15 +159,46 @@ useLayoutEffect(() => {
   {/* ===================== */}
   {/* ✅ TELA 2 — 100vw */}
   {/* ===================== */}
-  <div className="w-screen h-screen shrink-0 relative flex items-center justify-center bg-white">
+<div className="w-screen h-screen flex items-center justify-center bg-white relative overflow-hidden">
 
-    <div className="text-center px-10c z-10">
-      <h1 className="font-syne text-terciaria text-xl opacity-0 md:opacity-0 lg:opacity-100 md:text-5xl lg:text-7xl font-extrabold">
-        Conhecendo novas tecnologias
-      </h1>
-    </div>
+  {/* TEXTO CENTRAL */}
+  <div className="absolute z-10 text-center">
+    <h1 className="font-syne text-terciaria text-4xl md:text-6xl lg:text-7xl font-extrabold">
+      Tecnologias
+    </h1>
+  </div>
+
+  {/* CIRCULO */}
+  <div className="relative w-[300px] h-[300px] rounded-full border border-primaria animate-spin-slow">
+
+    {/* ITEM */}
+    <span className="absolute top-0 left-1/2 -translate-x-1/2 font-semibold">
+      React
+    </span>
+
+    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 font-semibold">
+      Next.js
+    </span>
+
+    <span className="absolute left-0 top-1/2 -translate-y-1/2 font-semibold">
+      TypeScript
+    </span>
+
+    <span className="absolute right-0 top-1/2 -translate-y-1/2 font-semibold">
+      Node
+    </span>
+
+    <span className="absolute top-[15%] right-[10%] font-semibold">
+      GSAP
+    </span>
+
+    <span className="absolute bottom-[15%] left-[10%] font-semibold">
+      Tailwind
+    </span>
 
   </div>
+
+</div>
 
 </div>
 
