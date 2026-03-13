@@ -5,9 +5,9 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FaReact,FaGithub  } from "react-icons/fa";
 import { RiTailwindCssFill } from "react-icons/ri";
-import { SiJavascript  } from "react-icons/bs";
+
 import { GrMysql } from "react-icons/gr";
-import { SiGsap } from "react-icons/si";
+import { SiGsap, SiJavascript } from "react-icons/si";
 
 gsap.registerPlugin(ScrollTrigger);
   
