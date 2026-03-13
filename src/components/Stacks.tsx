@@ -13,10 +13,14 @@ import { RiTailwindCssFill } from "react-icons/ri";
 import { SiMysql  } from "react-icons/si";
 import { LuMonitorCog, LuMonitor  } from "react-icons/lu";
 import { color } from "framer-motion";
+import usePopCartoonEffect from "../../Hooks/usePopCartoonEffect";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function HorizontalScroll() {
+
+  usePopCartoonEffect();
+
   const containerRef = useRef<HTMLDivElement>(null);
 const svgRef = useRef<SVGSVGElement>(null);
 const pathRef = useRef<SVGPathElement>(null);
@@ -171,11 +175,11 @@ useLayoutEffect(() => {
       <div className="flex w-[300vw] h-screen">
 
         {/* ================= FRONTEND ================= */}
-        <div className="panel w-screen h-screen flex-shrink-0 flex flex-col">
+        <div className="panel w-screen h-screen flex-shrink-0 flex flex-col pop-cartoon-text">
           
           {/* Título */}
           <div className="items-center justify-center flex pt-10 md:pb-10 md:pt-12">
-            <h1 className="font-syne font-extrabold text-xl md:text-7xl pb-5">
+            <h1 className="font-syne font-extrabold text-5xl md:text-7xl pb-5">
               STACKS
             </h1>
           </div>
@@ -279,7 +283,7 @@ useLayoutEffect(() => {
         </div>
 
         {/* ================= BACKEND ================= */}
-            <div className="panel w-screen h-screen flex-shrink-0 flex flex-col">
+            <div className="panel w-screen h-screen flex-shrink-0 flex flex-col ">
           
              
           {/* Título */}
@@ -393,8 +397,8 @@ useLayoutEffect(() => {
         <div className="panel w-screen h-screen flex-shrink-0 flex items-center justify-center ">
       
 
-          <div className ="text-center justify-center">
-          <h1 className="text-3xl md:text-8xl font-extrabold font-syne text-primaria">SEMPRE ALMEJANDO O MELHOR !</h1>
+          <div className ="text-center justify-center pop-cartoon-text">
+          <h1 className="text-3xl md:text-8xl font-extrabold font-syne text-primaria pop-cartoon-text">SEMPRE ALMEJANDO O MELHOR !</h1>
           </div>
         </div>
 

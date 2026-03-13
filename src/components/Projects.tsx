@@ -3,10 +3,16 @@
 import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { FaReact,FaGithub  } from "react-icons/fa";
+import { RiTailwindCssFill } from "react-icons/ri";
+import { BsJavascript } from "react-icons/bs";
+import { GrMysql } from "react-icons/gr";
+import { SiGsap } from "react-icons/si";
 
 gsap.registerPlugin(ScrollTrigger);
-
+  
 export default function HorizontalSection() {
+
   const sectionRef = useRef<HTMLDivElement>(null);
   const wrapperRef = useRef<HTMLDivElement>(null);
   const svgRef = useRef<SVGSVGElement>(null);
@@ -16,6 +22,16 @@ export default function HorizontalSection() {
   const windElements = gsap.utils.toArray<HTMLElement>(
     ".wind-effect"
   );
+  const iconsRef = useRef<HTMLSpanElement[]>([]);
+   const elements = gsap.utils.toArray<HTMLElement>(".pop-cartoon");
+
+
+const addIcon = (el: HTMLSpanElement) => {
+  if (el && !iconsRef.current.includes(el)) {
+    iconsRef.current.push(el);
+  }
+};
+
 useLayoutEffect(() => {
   const section = sectionRef.current;
   const wrapper = wrapperRef.current;
@@ -25,11 +41,10 @@ useLayoutEffect(() => {
 
   const ctx = gsap.context(() => {
 
-    // ✅ DECLARE PRIMEIRO
     const getScrollLength = () =>
       wrapper.scrollWidth - document.documentElement.clientWidth;
 
-    // 🔹 HORIZONTAL
+    // HORIZONTAL SCROLL
     const horizontalTween = gsap.to(wrapper, {
       x: () => -getScrollLength(),
       ease: "none",
@@ -41,22 +56,19 @@ useLayoutEffect(() => {
         pin: true,
         invalidateOnRefresh: true,
         anticipatePin: 1,
-        
       },
     });
 
-    // 🔹 SVG
+    // SVG DRAW
     const path = svg.querySelector("#mainPath") as SVGPathElement;
 
     if (path) {
       const length = path.getTotalLength();
 
-   gsap.set(path, {
-  strokeDasharray: length,
-  strokeDashoffset: length, // começa escondido
-});
-
-
+      gsap.set(path, {
+        strokeDasharray: length,
+        strokeDashoffset: length,
+      });
 
       gsap.to(path, {
         strokeDashoffset: 0,
@@ -70,24 +82,22 @@ useLayoutEffect(() => {
       });
     }
 
-    // 🔹 PARALLAX
+    // PARALLAX ELEMENTS
     const windElements = gsap.utils.toArray<HTMLElement>(".wind-effect");
 
-    windElements.forEach((el, i) => {
-      const depth = 150 + i * 40;
-
+    windElements.forEach((el) => {
       gsap.fromTo(
         el,
         { x: 0, y: 75 },
         {
-          x: -depth,
+          x: 120,
           y: 0,
-          ease: "none",
+          ease: "power2.out",
           scrollTrigger: {
             containerAnimation: horizontalTween,
             trigger: el,
             start: "left 100%",
-            end: "left -20%",
+            end: "left 40%",
             scrub: true,
           },
         }
@@ -96,12 +106,70 @@ useLayoutEffect(() => {
 
     ScrollTrigger.config({
       ignoreMobileResize: true,
-      
+    });
+
+    // ICON WAVE EFFECT
+    gsap.set(iconsRef.current, {
+      transformOrigin: "center center",
+    });
+
+    if (screen2Ref.current) {
+
+      gsap.to(iconsRef.current, {
+        y: -40,
+        duration: 0.4,
+        ease: "back.out(3)",
+        stagger: {
+          each: 0.1,
+          yoyo: true,
+          repeat: 1,
+        },
+        scrollTrigger: {
+          trigger: screen2Ref.current,
+          containerAnimation: horizontalTween,
+          start: "left 100%",
+          end: "left 40%",
+          toggleActions: "play none none reverse",
+        },
+      });
+
+      gsap.to(iconsRef.current, {
+        color: "#202020",
+        duration: 0.2,
+        stagger: 0.08,
+        scrollTrigger: {
+          trigger: screen2Ref.current,
+          containerAnimation: horizontalTween,
+          start: "left 100%",
+          end: "left 10%",
+          toggleActions: "play none none reverse",
+        },
+      });
+    }
+
+    // CARTOON POP CLASS
+    const elements = gsap.utils.toArray<HTMLElement>(".pop-cartoon");
+
+    elements.forEach((el) => {
+      gsap.from(el, {
+        scale: 0,
+        opacity: 0,
+        y: 40,
+        duration: 0.5,
+        ease: "back.out(2.5)",
+        scrollTrigger: {
+          trigger: el,
+          containerAnimation: horizontalTween,
+          start: "left 100%",
+          toggleActions: "play none none reverse",
+        },
+      });
     });
 
   }, section);
 
   return () => ctx.revert();
+
 }, []);
 
   return (
@@ -116,14 +184,14 @@ useLayoutEffect(() => {
         {/* tela 1 + tela 2 */}
 <div className="w-[200vw] h-screen shrink-0 flex bg-white">
 
-  {/* ===================== */}
-  {/* ✅ TELA 1 — 100vw */}
-  {/* ===================== */}
+
+  {/* TELA 1 — 100vw */}
+ 
   <div className="w-screen h-screen shrink-0 relative flex bg-white">
 
     {/* Primeiro título */}
     <div className="fixed top-20 md:top-42 md:px-10 lg:top-16 flex lg:w-1/2 z-20">
-      <h1 className="font-syne text-left text-primaria ml-10 md:ml-0 text-4xl md:text-5xl lg:text-7xl font-extrabold drop-shadow-2xl">
+      <h1 className="pop-cartoon-text font-syne text-left text-primaria ml-10 md:ml-0 text-4xl md:text-5xl lg:text-7xl font-extrabold drop-shadow-2xl">
         Futuro Dev FrontEnd
       </h1>
     </div>
@@ -147,53 +215,56 @@ useLayoutEffect(() => {
       </svg>
     </div>
 
-    {/* Texto descrição */}
-    <div className="absolute bottom-0 right-0 z-20 w-full md:w-[50rem] lg:w-[60rem] md:pr-10 md:pb-10  flex justify-start">
+ {/* Texto descrição */}
+    <div className="items-end ml-10  pop-cartoon-text z-20  md:w-[50rem] lg:w-[60rem] md:pr-10 md:pb-10  flex justify-start">
       <p className="text-justify font-syne font-bold text-base md:text-lg lg:text-3xl p-3 text-terciaria">
      Sou um desenvolvedor Frontend focado em criar interfaces modernas, responsivas e altamente performáticas. Transformo ideias em experiências digitais intuitivas, combinando design estratégico, animações fluidas e código limpo. Tenho especial atenção à usabilidade, acessibilidade e aos detalhes que elevam a experiência do usuário.
       </p>
     </div>
-
+   
   </div>
 
-  {/* ===================== */}
   {/* ✅ TELA 2 — 100vw */}
-  {/* ===================== */}
-<div className="w-screen h-screen flex items-center justify-center bg-white relative overflow-hidden">
+ 
+<div
+  ref={screen2Ref}
+  className="w-screen h-screen flex items-center justify-center relative bg-white overflow-hidden"
+>
 
   {/* TEXTO CENTRAL */}
-  <div className="absolute z-10 text-center">
-    <h1 className="font-syne text-terciaria text-4xl md:text-6xl lg:text-7xl font-extrabold">
-      Tecnologias
+  <div className="absolute z-10 text-center px-4">
+    <h1 className="pop-cartoon font-syne text-terciaria text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold">
+      DESENVOLVENDO DESDE 2023
     </h1>
   </div>
 
-  {/* CIRCULO */}
-  <div className="relative w-[300px] h-[300px] rounded-full border border-primaria animate-spin-slow">
+  {/* ICONES */}
+  <div className="z-10 flex flex-nowrap md:flex-nowrap absolute bottom-[38%] md:bottom-1/4 items-center justify-center gap-6 sm:gap-8 md:gap-10 w-full px-6">
 
-    {/* ITEM */}
-    <span className="absolute top-0 left-1/2 -translate-x-1/2 font-semibold">
-      React
+  <span ref={addIcon} className="text-[#036be2E8] pop-cartoon">
+      <FaReact className="text-[40px] sm:text-[70px] md:text-[90px] lg:text-[120px]" />
     </span>
 
-    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 font-semibold">
-      Next.js
+    <span ref={addIcon} className="text-[#036be2E8] pop-cartoon">
+      <RiTailwindCssFill className="text-[40px] sm:text-[70px] md:text-[90px] lg:text-[120px]" />
     </span>
 
-    <span className="absolute left-0 top-1/2 -translate-y-1/2 font-semibold">
-      TypeScript
+    <span 
+    ref={addIcon}
+    className="text-[#036be2E8] pop-cartoon">
+      <BsJavascript className="text-[40px] sm:text-[70px] md:text-[90px] lg:text-[120px]" />
     </span>
 
-    <span className="absolute right-0 top-1/2 -translate-y-1/2 font-semibold">
-      Node
+    <span ref={addIcon} className="text-[#036be2E8] pop-cartoon">
+      <GrMysql className="text-[40px] sm:text-[70px] md:text-[90px] lg:text-[120px]" />
     </span>
 
-    <span className="absolute top-[15%] right-[10%] font-semibold">
-      GSAP
+    <span ref={addIcon} className="text-[#036be2E8] pop-cartoon">
+      <FaGithub className="text-[40px] sm:text-[70px] md:text-[90px] lg:text-[120px]" />
     </span>
 
-    <span className="absolute bottom-[15%] left-[10%] font-semibold">
-      Tailwind
+    <span ref={addIcon} className="text-[#036be2E8] pop-cartoon">
+      <SiGsap className="text-[40px] sm:text-[70px] md:text-[90px] lg:text-[120px]" />
     </span>
 
   </div>
@@ -209,14 +280,11 @@ useLayoutEffect(() => {
             className="relative min-w-[250vw] h-screen shrink-0 bg-white"
           >
             <div className="absolute bottom-10 left-20 p-10 w-80 text-left">
-              <h2 className="text-xl font-syne  font-extrabold text-primaria pb-5">
+              <h2 className="text-xl font-syne  font-extrabold text-secundaria pop-cartoon pb-5">
                 PROJETOS REALIZADOS
               </h2>
-              <p className="font-syne z-20  ">
-                Unique corporate websites
-                Smart open source CMS.
-                E-commerce solutions
-                Web app development
+              <p className="font-syne z-20  pop-cartoon ">
+                Entenda aqui os tipos de projetos que já realizei, cada um com foco em design moderno, usabilidade e performance.
               </p>
             </div>
 
@@ -255,7 +323,7 @@ useLayoutEffect(() => {
             ].map((item, i) => (
               <div
                 key={i}
-                className={`absolute z-20   ${item.position === "top" ? "top-24" : "bottom-24"} w-80`}
+                className={`absolute z-20 pop-cartoon   ${item.position === "top" ? "top-24" : "bottom-24"} w-80`}
                 style={{ left: item.left }}
               >
                 <div
@@ -276,7 +344,7 @@ useLayoutEffect(() => {
             <div className="absolute inset-0 flex items-center justify-center">
               <h1
                 ref={bigTextRef}
-                className="text-4xl lg:text-9xl  font-syne font-extrabold text-terciaria z-20 whitespace-nowrap"
+                className="text-4xl ml-36 md:ml-0 lg:text-9xl  font-syne font-extrabold text-terciaria z-20 whitespace-nowrap"
               >
                 Sempre utilizando designs modernos
               </h1>
@@ -285,7 +353,7 @@ useLayoutEffect(() => {
 
           {/* TELA 3 */}
           <div className="w-[120vw] h-screen shrink-0 bg-white flex items-center justify-center">
- <div className="flex flex-col items-center justify-center text-center gap-6  ml-56 md:ml-96 text-terciaria w-full z-20">
+ <div className="flex flex-col items-center justify-center text-center gap-6  ml-56 md:ml-96 text-terciaria w-full z-20 pop-cartoon ">
 
     <h1 className="text-2xl md:text-6xl font-syne font-extrabold">
       TUDO

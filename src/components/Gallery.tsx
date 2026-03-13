@@ -4,6 +4,7 @@
   import { Link } from "react-router-dom";
 
   import { motion } from "framer-motion";
+  import usePopCartoonEffect from "../../Hooks/usePopCartoonEffect";
 
   const videos = [
     {
@@ -57,18 +58,21 @@
   ];
 
   const Gallery = () => {
+
+ usePopCartoonEffect();
+
     return (
       <section className="w-full bg-white flex flex-col justify-center overflow-x-hidden pb-20" id="projects">
 
         {/* TÍTULO */}
         <div className="relative flex justify-center my-10">
-          <h1 className="text-4xl md:text-9xl font-syne font-extrabold text-primaria">
+          <h1 className="text-4xl md:text-9xl font-syne font-extrabold text-primaria pop-cartoon-text">
             PROJETOS
           </h1>
         </div>
 
         {/* GRID */}
-        <div className="projects-grid w-[95%] md:w-[90%] mx-auto grid grid-cols-1 md:grid-cols-2 gap-20">
+        <div className="projects-grid w-[95%] md:w-[90%] mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 ">
           {videos.map((video) => (
             <div key={video.id} className="space-y-4">
               
@@ -130,6 +134,7 @@
                       shadow-xl
                       hover:scale-110
                       transition-transform duration-300
+                   
                     "
                   >
                     Saber mais
@@ -155,7 +160,7 @@
 
               {/* FOOTER */}
               <div className="flex items-center justify-between px-4">
-                <h2 className="font-syne font-extrabold text-lg md:text-2xl">
+                <h2 className="font-syne font-extrabold text-lg md:text-2xl pop-cartoon-text">
                   {video.title}
                 </h2>
               </div>

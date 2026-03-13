@@ -1,10 +1,11 @@
 "use client"
 
 import React from "react"
-import { motion } from "framer-motion"
+import usePopCartoonEffect from "../../Hooks/usePopCartoonEffect"
 
 const AboutSection = () => {
 
+    
   const container = {
     hidden: {},
     show: {
@@ -41,43 +42,41 @@ const AboutSection = () => {
     "Busco uma oportunidade para aplicar meus conhecimentos em projetos reais, contribuir com soluções eficientes e evoluir tecnicamente em um ambiente profissional, sempre com comprometimento, proatividade e forte interesse em crescimento na área de Tecnologia da Informação."
   ]
 
+  usePopCartoonEffect(); 
   return (
-    <section className="w-full min-h-screen bg-white py-24 " id ="about">
+    <section className=" w-full min-h-screen bg-white py-24 " id ="about">
 
       <div className="max-w-6xl  mx-auto px-6 lg:px-16">
 
         {/* TITULO */}
-        <motion.h1
-          initial={{ opacity: 0, y: 40, filter: "blur(10px)" }}
-          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-4xl md:text-6xl lg:text-7xl mb-16 text-primaria font-syne font-extrabold text-center"
+        <h1
+         
+          className="text-4xl pop-cartoon-text md:text-6xl lg:text-7xl mb-16 text-primaria font-syne font-extrabold text-center"
         >
           SOBRE MIM
-        </motion.h1>
+        </h1>
 
 
         {/* TEXTOS */}
-        <motion.div
+        <div
           variants={container}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="space-y-10"
+          className="space-y-10 "
         >
 
           {texts.map((text, index) => (
-            <motion.p
+            <p
               key={index}
               variants={paragraph}
-              className="text-lg md:text-xl lg:text-3xl leading-relaxed text-terciaria font-syne text-justify font-bold"
+              className="text-lg pop-cartoon-text md:text-xl lg:text-3xl leading-relaxed text-terciaria font-syne text-justify font-bold"
             >
               {text}
-            </motion.p>
+            </p>
           ))}
 
-        </motion.div>
+        </div>
 
       </div>
 

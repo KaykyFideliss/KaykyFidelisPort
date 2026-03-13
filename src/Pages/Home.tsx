@@ -79,7 +79,7 @@ export default function Home() {
           <Gallery />
           </div>
           <Frase />
-          <Stacks />
+      <Stacks />
           <WorkTogether />
           <Footer />
         </div>
