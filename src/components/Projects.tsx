@@ -7,7 +7,7 @@ import { FaReact,FaGithub  } from "react-icons/fa";
 import { RiTailwindCssFill } from "react-icons/ri";
 
 import { GrMysql } from "react-icons/gr";
-import { SiGsap, SiJavascript } from "react-icons/si";
+import {  SiJavascript } from "react-icons/si";
 
 gsap.registerPlugin(ScrollTrigger);
   
@@ -264,7 +264,7 @@ useLayoutEffect(() => {
     </span>
 
     <span ref={addIcon} className="text-[#036be2E8] pop-cartoon">
-      <SiGsap className="text-[40px] sm:text-[70px] md:text-[90px] lg:text-[120px]" />
+     
     </span>
 
   </div>
