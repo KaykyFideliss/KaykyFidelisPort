@@ -5,7 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FaReact,FaGithub  } from "react-icons/fa";
 import { RiTailwindCssFill } from "react-icons/ri";
-import { BsJavascript } from "react-icons/bs";
+import { SiJavascript  } from "react-icons/bs";
 import { GrMysql } from "react-icons/gr";
 import { SiGsap } from "react-icons/si";
 
@@ -252,7 +252,7 @@ useLayoutEffect(() => {
     <span 
     ref={addIcon}
     className="text-[#036be2E8] pop-cartoon">
-      <BsJavascript className="text-[40px] sm:text-[70px] md:text-[90px] lg:text-[120px]" />
+      <SiJavascript className="text-[40px] sm:text-[70px] md:text-[90px] lg:text-[120px]" />
     </span>
 
     <span ref={addIcon} className="text-[#036be2E8] pop-cartoon">
