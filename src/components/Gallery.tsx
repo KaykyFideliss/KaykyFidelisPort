@@ -66,7 +66,7 @@
 
         {/* TÍTULO */}
         <div className="relative flex justify-center my-10">
-          <h1 className="text-4xl md:text-9xl font-syne font-extrabold text-primaria pop-cartoon-text">
+          <h1 className="text-4xl md:text-9xl font-syne font-extrabold text-primaria ">
             PROJETOS
           </h1>
         </div>
@@ -160,7 +160,7 @@
 
               {/* FOOTER */}
               <div className="flex items-center justify-between px-4">
-                <h2 className="font-syne font-extrabold text-lg md:text-2xl pop-cartoon-text">
+                <h2 className="font-syne font-extrabold text-lg md:text-2xl ">
                   {video.title}
                 </h2>
               </div>

@@ -41,8 +41,8 @@ useLayoutEffect(() => {
 
   const ctx = gsap.context(() => {
 
-    const getScrollLength = () =>
-      wrapper.scrollWidth - document.documentElement.clientWidth;
+   const getScrollLength = () =>
+  window.innerWidth * 4;
 
     // HORIZONTAL SCROLL
     const horizontalTween = gsap.to(wrapper, {
@@ -197,14 +197,14 @@ useLayoutEffect(() => {
     </div>
 
     {/* SVG */}
-    <div className="absolute top-96 md:top-0 -translate-y-1/2 left-40 md:-left-60 w-[550vw] pointer-events-none z-10">
-      <svg
-        ref={svgRef}
-        viewBox="0 0 6065 1075"
-        preserveAspectRatio="xMidYMid meet"
-        className="block h-auto"
-        fill="none"
-      >
+ <div className="absolute top-36 md:top-0 -translate-y-1/2 -left-36 md:-left-60 pointer-events-none z-10">
+  <svg
+    ref={svgRef}
+    viewBox="0 0 6065 1075"
+    className="block w-[6065px] md:w-[550vw] h-auto"
+    preserveAspectRatio="xMidYMid meet"
+    fill="none"
+  >
         <path
           id="mainPath"
           d="M150.04 806.034C150.04 806.034 507.542 946.316 998.04 826.034C1488.54 705.753 1497.29 594.757 2002.04 578.034C2585.96 558.688 2627 959.54 3210.04 922.034C3894.04 878.034 3700.89 534.034 4398.04 534.034C4866.04 534.034 4858.04 902.034 5258.04 858.034C5589.49 821.575 5914.04 150.034 5914.04 150.034"
@@ -233,7 +233,7 @@ useLayoutEffect(() => {
 
   {/* TEXTO CENTRAL */}
   <div className="absolute z-10 text-center px-4">
-    <h1 className="pop-cartoon font-syne text-terciaria text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold">
+    <h1 className="pop-cartoon font-syne text-terciaria text-xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold">
       DESENVOLVENDO DESDE 2023
     </h1>
   </div>
@@ -330,10 +330,10 @@ useLayoutEffect(() => {
 
                   className="p-8 will-change-transform"
                 >
-                  <h2 className="text-xl font-syne text-start font-extrabold text-primaria pb-5 ">
+                  <h2 className="text-base lg:text-xl font-syne text-start font-extrabold text-secundaria pb-5 ">
                     {item.title}
                   </h2>
-                  <p className="font-syne text-start ">
+                  <p className="font-syne text-start text-sm lg:text-base">
                     {item.text}
                   </p>
 
@@ -351,21 +351,9 @@ useLayoutEffect(() => {
             </div>
           </div>
 
-          {/* TELA 3 */}
-          <div className="w-[120vw] h-screen shrink-0 bg-white flex items-center justify-center">
- <div className="flex flex-col items-center justify-center text-center gap-6  ml-56 md:ml-96 text-terciaria w-full z-20 pop-cartoon ">
+          
 
-    <h1 className="text-2xl md:text-6xl font-syne font-extrabold">
-      TUDO
-    </h1>
-    <h1 className="text-2xl md:text-6xl font-syne font-extrabold">
-      QUE VOCÊ
-    </h1>
-    <h1 className="text-2xl md:text-6xl font-syne font-extrabold">
-      PRECISA
-    </h1>
-  </div>
-</div>
+
 
         </div>
       </section>

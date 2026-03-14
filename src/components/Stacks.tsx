@@ -175,7 +175,7 @@ useLayoutEffect(() => {
       <div className="flex w-[300vw] h-screen">
 
         {/* ================= FRONTEND ================= */}
-        <div className="panel w-screen h-screen flex-shrink-0 flex flex-col pop-cartoon-text">
+        <div className="panel w-screen h-screen flex-shrink-0 flex flex-col ">
           
           {/* Título */}
           <div className="items-center justify-center flex pt-10 md:pb-10 md:pt-12">
@@ -257,24 +257,30 @@ useLayoutEffect(() => {
           <div>{stack.icon}</div>
         </div>
 
-        {/* CONTENT */}
-        <div
-          className={`
-            mx-6 text-white font-syne
-            text-justify text-sm md:text-base lg:text-lg
+       {/* CONTENT */}
+<div
+  className={`
+    mx-6 text-white font-syne
+    text-justify text-sm md:text-base lg:text-lg
+    transition-all duration-700
+    ease-[cubic-bezier(0.22,1,0.36,1)]
+    overflow-hidden
+    ${isOpen 
+      ? "opacity-100 max-h-[400px] md:max-h-[500px] lg:max-h-96 pb-6 pt-2" 
+      : "opacity-0 max-h-0"}
+  `}
+>
+  <p>{stack.text}</p>
+</div>
 
-            transition-all duration-700
-            ease-[cubic-bezier(0.22,1,0.36,1)]
-
-            overflow-hidden
-
-            ${isOpen 
-              ? "opacity-100 max-h-[400px] md:max-h-[500px] lg:max-h-96 pb-6 pt-2" 
-              : "opacity-0 max-h-0"}
-          `}
-        >
-          <p>{stack.text}</p>
-        </div>
+{/* CTA */}
+{!isOpen && (
+  <div className="mt-auto flex justify-center pb-4">
+    <span className="text-white text-sm font-syne opacity-80">
+      Clique para ver mais
+    </span>
+  </div>
+)}
       </div>
     );
   })}
@@ -315,7 +321,7 @@ useLayoutEffect(() => {
               </div>
             </div>
 
-            {/* frontend */}
+            {/* Backend */}
  <div className="flex flex-col md:flex-row h-full mx-4 lg:mx-10 gap-2 lg:gap-0 mt-4 lg:mt-0">
   {backend.map((stack, index) => {
     const isOpen = open === stack.id;
@@ -365,28 +371,38 @@ useLayoutEffect(() => {
 
           <div>{stack.icon}</div>
         </div>
+{/* CONTENT */}
+<div
+  className={`
+    mx-6 text-white font-syne
+    text-justify text-sm md:text-base lg:text-lg
+    transition-all duration-700
+    ease-[cubic-bezier(0.22,1,0.36,1)]
+    overflow-hidden
+    ${isOpen 
+      ? "opacity-100 max-h-[400px] md:max-h-[500px] lg:max-h-96 pb-6 pt-2" 
+      : "opacity-0 max-h-0"}
+  `}
+>
+  <p>{stack.text}</p>
+</div>
 
-        {/* CONTENT */}
-        <div
-          className={`
-            mx-6 text-white font-syne
-            text-justify text-sm md:text-base lg:text-lg
+{/* CTA */}
+{!isOpen && (
+  <div className="mt-auto flex justify-center pb-4">
+    <span className="text-white text-sm font-syne opacity-80">
+      Clique para ver mais
+    </span>
+  </div>
+)}
 
-            transition-all duration-700
-            ease-[cubic-bezier(0.22,1,0.36,1)]
-
-            overflow-hidden
-
-            ${isOpen 
-              ? "opacity-100 max-h-[400px] md:max-h-[500px] lg:max-h-96 pb-6 pt-2" 
-              : "opacity-0 max-h-0"}
-          `}
-        >
-          <p>{stack.text}</p>
-        </div>
+        
+        
+       
       </div>
     );
   })}
+  
 </div>
           
           </div>
@@ -395,10 +411,8 @@ useLayoutEffect(() => {
 
         {/* ================= NEXT ================= */}
         <div className="panel w-screen h-screen flex-shrink-0 flex items-center justify-center ">
-      
-
-          <div className ="text-center justify-center pop-cartoon-text">
-          <h1 className="text-3xl md:text-8xl font-extrabold font-syne text-primaria pop-cartoon-text">SEMPRE ALMEJANDO O MELHOR !</h1>
+          <div className ="text-center justify-center ">
+          <h1 className="text-3xl md:text-8xl font-extrabold font-syne text-primaria ">SEMPRE ALMEJANDO O MELHOR !</h1>
           </div>
         </div>
 

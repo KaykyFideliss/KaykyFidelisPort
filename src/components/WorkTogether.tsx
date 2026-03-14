@@ -1,9 +1,8 @@
 import React from "react"
 import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa"
-import usePopCartoonEffect from "../../Hooks/usePopCartoonEffect"
+
 const WorkTogether = () => {
 
-  usePopCartoonEffect();
 
   const contacts = [
     {
@@ -24,24 +23,25 @@ const WorkTogether = () => {
   ]
 
   return (
-    <section className="bg-white h-screen w-full"
+    <section className="bg-white h-screen w-full "
     id="contact">
-      <div
-        className="
-          w-full h-full 
-          flex flex-col lg:flex-row   
-          justify-center items-center 
-          px-6 md:px-10 lg:px-16
-          gap-12 lg:gap-52         
-        "
-      >
+     <div
+  className="
+    w-full h-full
+    max-w-7xl mx-auto
+    flex flex-col lg:flex-row
+    justify-center items-center
+    px-6 md:px-10 lg:px-16
+    gap-12 lg:gap-52
+  "
+>
         
         {/* TEXTO */}
         <div>
           <h1 className="
             text-4xl sm:text-5xl md:text-6xl lg:text-9xl
             text-primaria font-syne font-extrabold leading-tight
-            text-center lg:text-left pop-cartoon-text
+            text-center lg:text-left 
           ">
             VAMOS<br />
             <span className="text-terciaria">JUNTOS</span><br />
@@ -56,7 +56,7 @@ const WorkTogether = () => {
             flex-row lg:flex-col     /* MOBILE → linha | DESKTOP → coluna */
             gap-6 md:gap-8
             w-full lg:w-1/3
-            justify-center pop-cartoon-text
+            justify-center 
           "
         >
           {contacts.map((contact) => (
