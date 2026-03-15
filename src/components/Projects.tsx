@@ -41,23 +41,30 @@ useLayoutEffect(() => {
 
   const ctx = gsap.context(() => {
 
-   const getScrollLength = () =>
-  window.innerWidth * 4;
+const getScrollLength = () => {
+  const sections = wrapper.children;
+  let totalWidth = 0;
 
+  for (let i = 0; i < sections.length; i++) {
+    totalWidth += sections[i].offsetWidth;
+  }
+
+  return totalWidth - window.innerWidth;
+};
     // HORIZONTAL SCROLL
-    const horizontalTween = gsap.to(wrapper, {
-      x: () => -getScrollLength(),
-      ease: "none",
-      scrollTrigger: {
-        trigger: section,
-        start: "top top",
-        end: () => `+=${getScrollLength()}`,
-        scrub: true,
-        pin: true,
-        invalidateOnRefresh: true,
-        anticipatePin: 1,
-      },
-    });
+const horizontalTween = gsap.to(wrapper, {
+  x: () => -getScrollLength(),
+  ease: "none",
+  scrollTrigger: {
+    trigger: section,
+    start: "top top",
+    end: () => `+=${getScrollLength()}`,
+    scrub: true,
+    pin: true,
+    invalidateOnRefresh: true,
+    anticipatePin: 1,
+  },
+});
 
     // SVG DRAW
     const path = svg.querySelector("#mainPath") as SVGPathElement;
@@ -108,44 +115,64 @@ useLayoutEffect(() => {
       ignoreMobileResize: true,
     });
 
-    // ICON WAVE EFFECT
-    gsap.set(iconsRef.current, {
-      transformOrigin: "center center",
-    });
+ // ICON WAVE EFFECT
+gsap.set(iconsRef.current, {
+  transformOrigin: "center center",
+});
 
-    if (screen2Ref.current) {
+const mm = gsap.matchMedia();
 
-      gsap.to(iconsRef.current, {
-        y: -40,
-        duration: 0.4,
-        ease: "back.out(3)",
-        stagger: {
-          each: 0.1,
-          yoyo: true,
-          repeat: 1,
-        },
-        scrollTrigger: {
-          trigger: screen2Ref.current,
-          containerAnimation: horizontalTween,
-          start: "left 100%",
-          end: "left 40%",
-          toggleActions: "play none none reverse",
-        },
-      });
+mm.add("(min-width: 768px)", () => {
+  // TABLET + DESKTOP
 
-      gsap.to(iconsRef.current, {
-        color: "#202020",
-        duration: 0.2,
-        stagger: 0.08,
-        scrollTrigger: {
-          trigger: screen2Ref.current,
-          containerAnimation: horizontalTween,
-          start: "left 100%",
-          end: "left 10%",
-          toggleActions: "play none none reverse",
-        },
-      });
-    }
+  gsap.to(iconsRef.current, {
+    y: -40,
+    duration: 0.4,
+    ease: "back.out(3)",
+    stagger: {
+      each: 0.1,
+      yoyo: true,
+      repeat: 1,
+    },
+    scrollTrigger: {
+      trigger: screen2Ref.current,
+      containerAnimation: horizontalTween,
+      start: "left 100%",
+      end: "left 40%",
+      toggleActions: "play none none reverse",
+    },
+  });
+
+  gsap.to(iconsRef.current, {
+    color: "#202020",
+    duration: 0.2,
+    stagger: 0.08,
+    scrollTrigger: {
+      trigger: screen2Ref.current,
+      containerAnimation: horizontalTween,
+      start: "left 100%",
+      end: "left 10%",
+      toggleActions: "play none none reverse",
+    },
+  });
+});
+
+mm.add("(max-width: 767px)", () => {
+  // MOBILE → só muda cor
+
+  gsap.to(iconsRef.current, {
+    color: "#202020",
+    duration: 0.2,
+    stagger: 0.08,
+    scrollTrigger: {
+      trigger: screen2Ref.current,
+      containerAnimation: horizontalTween,
+      start: "left 100%",
+      end: "left 10%",
+      toggleActions: "play none none reverse",
+    },
+  });
+});
 
     // CARTOON POP CLASS
     const elements = gsap.utils.toArray<HTMLElement>(".pop-cartoon");
@@ -191,7 +218,7 @@ useLayoutEffect(() => {
 
     {/* Primeiro título */}
     <div className="fixed top-20 md:top-42 md:px-10 lg:top-16 flex lg:w-1/2 z-20">
-      <h1 className="pop-cartoon-text font-syne text-left text-primaria ml-10 md:ml-0 text-4xl md:text-5xl lg:text-7xl font-extrabold drop-shadow-2xl">
+      <h1 className="pop-cartoon-text font-syne text-center md:text-left text-primaria ml-5 md:ml-0 text-4xl md:text-5xl lg:text-7xl font-extrabold drop-shadow-2xl">
         Futuro Dev FrontEnd
       </h1>
     </div>
@@ -204,6 +231,7 @@ useLayoutEffect(() => {
     className="block w-[6065px] md:w-[550vw] h-auto"
     preserveAspectRatio="xMidYMid meet"
     fill="none"
+    
   >
         <path
           id="mainPath"
@@ -216,9 +244,11 @@ useLayoutEffect(() => {
     </div>
 
  {/* Texto descrição */}
-    <div className="items-end ml-10  pop-cartoon-text z-20  md:w-[50rem] lg:w-[60rem] md:pr-10 md:pb-10  flex justify-start">
-      <p className="text-justify font-syne font-bold text-base md:text-lg lg:text-3xl p-3 text-terciaria">
-     Sou um desenvolvedor Frontend focado em criar interfaces modernas, responsivas e altamente performáticas. Transformo ideias em experiências digitais intuitivas, combinando design estratégico, animações fluidas e código limpo. Tenho especial atenção à usabilidade, acessibilidade e aos detalhes que elevam a experiência do usuário.
+    <div className="items-end ml-5 mr-5 md:ml-0 md:mr-0 pop-cartoon-text z-20  md:w-[50rem] lg:w-[60rem] md:pr-10 md:pb-10  flex justify-center md:justify-start">
+      <p className="text-justify font-syne font-bold text-base md:text-lg lg:text-3xl pb-3 text-terciaria mb-10">
+     Sou um desenvolvedor Frontend focado em criar interfaces modernas, responsivas e altamente performáticas. Transformo ideias em experiências 
+     digitais intuitivas, combinando design estratégico, animações fluidas e código limpo. Tenho especial atenção à usabilidade, acessibilidade e aos detalhes
+      que elevam a experiência do usuário.
       </p>
     </div>
    
@@ -349,9 +379,26 @@ useLayoutEffect(() => {
                 Sempre utilizando designs modernos
               </h1>
             </div>
-          </div>
 
-          
+            
+          </div>
+          {/* TELA 3 */}
+          <div className="w-[160vw] md:w-[120vw] h-screen shrink-0 bg-white flex items-center justify-center">
+ <div className="flex flex-col items-center justify-center text-center gap-6  ml-56 md:ml-96 text-terciaria w-full z-20">
+
+    <h1 className="text-2xl md:text-6xl font-syne font-extrabold">
+      TUDO
+    </h1>
+    <h1 className="text-2xl md:text-6xl font-syne font-extrabold">
+      QUE VOCÊ
+    </h1>
+    <h1 className="text-2xl md:text-6xl font-syne font-extrabold">
+      PRECISA
+    </h1>
+  </div>
+</div>
+
+        
 
 
 

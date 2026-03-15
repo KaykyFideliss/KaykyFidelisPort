@@ -10,7 +10,7 @@
     {
       id: 1,
       title: "ACQUALIFE",
-      url: "https://res.cloudinary.com/de4ncki8u/video/upload/v1762101934/acqualife_1_vy4l5i.mp4",
+      url: "/video/acqualifeVideo.mp4",
       site: "https://acqualife.vercel.app",
       path: "/Acqualife",
       repo: "https://github.com/KaykyFideliss/Website-Acqualife",
