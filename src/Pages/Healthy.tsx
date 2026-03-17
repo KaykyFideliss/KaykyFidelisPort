@@ -46,7 +46,7 @@ const Healthy = () => {
             Stacks4:"PostgreSQL",
           },
 
-          MainVideo:"https://res.cloudinary.com/de4ncki8u/video/upload/v1769467639/Vídeo_sem_título_Feito_com_o_Clipchamp_18_kw10ck.mp4",
+          MainVideo:"/video/Healthy.mp4",
 
           mockupLeft:"/images/project/healthy/pie.png",
           mockupRight:"/images/project/healthy/aprenda.png",

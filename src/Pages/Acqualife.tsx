@@ -58,10 +58,10 @@ const Acqualife = () => {
             Stacks4:"C#",
           },
 
-          MainVideo:"https://res.cloudinary.com/de4ncki8u/video/upload/v1772291888/Design_sem_nome_2_vhax2w.mp4",
+          MainVideo:"/video/acqualifeVideo.mp4",
 
           mockupLeft:"/images/project/acqualife/mockup.png",
-          mockupRight:"/images/project/acqualife/mockup.png",
+          mockupRight:"/images/project/acqualife/acqualife.png",
 
     },
 

@@ -24,7 +24,7 @@ export default function HorizontalScroll() {
   const containerRef = useRef<HTMLDivElement>(null);
 const svgRef = useRef<SVGSVGElement>(null);
 const pathRef = useRef<SVGPathElement>(null);
-  const [open, setOpen] = useState<number | null>(1);
+  const [open, setOpen] = useState<number | null>(null);
 
   const toggle = (id: number) => {
     setOpen(open === id ? null : id);

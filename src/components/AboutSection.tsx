@@ -51,7 +51,7 @@ const AboutSection = () => {
         {/* TITULO */}
         <h1
          
-          className="text-4xl  md:text-6xl lg:text-7xl mb-16 text-primaria font-syne font-extrabold text-center"
+          className="text-4xl pop-cartoon-text md:text-6xl lg:text-7xl mb-16 text-primaria font-syne font-extrabold text-center"
         >
           SOBRE MIM
         </h1>
@@ -70,7 +70,7 @@ const AboutSection = () => {
             <p
               key={index}
               variants={paragraph}
-              className="text-lg  md:text-xl lg:text-3xl leading-relaxed text-terciaria font-syne text-justify font-bold"
+              className="text-lg  md:text-xl pop-cartoon-text  lg:text-3xl leading-relaxed text-terciaria font-syne text-justify font-bold"
             >
               {text}
             </p>

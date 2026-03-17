@@ -22,7 +22,7 @@
     {
       id: 2,
       title: "HEALTHY WALLET",
-      url: "https://res.cloudinary.com/de4ncki8u/video/upload/v1769467639/Vídeo_sem_título_Feito_com_o_Clipchamp_18_kw10ck.mp4",
+      url: "/video/Healthy.mp4",
       site: "https://healthy-wallet.vercel.app",
       path: "/Healthy",
       repo: "https://github.com/KaykyFideliss/healthy-wallet-project",
@@ -34,7 +34,7 @@
     {
       id: 3,
       title: "ENVIRONMENTAL DISASTER",
-      url: "https://res.cloudinary.com/de4ncki8u/video/upload/v1762102275/E.D-video_z3qowq.mp4",
+      url: "/video/Disaster.mp4",
       site: "https://envirolmental-disaster.vercel.app",
       path: "/Disaster",
       repo: "https://github.com/KaykyFideliss/Envirolmental-Disaster-Responsivo",
@@ -46,7 +46,7 @@
     {
       id: 4,
       title: "PORTFÓLIO 1.0",
-      url: "https://res.cloudinary.com/de4ncki8u/video/upload/v1770949788/Port1.0_bvnggz.mp4",
+      url: "/video/Port1.0.mp4",
       site: "https://portifolio-kayky-fidelis.vercel.app",
       path: "/Portfolio",
       repo: "https://github.com/KaykyFideliss/Portifolio",

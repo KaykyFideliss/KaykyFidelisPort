@@ -52,7 +52,7 @@ const Acqualife = () => {
             
           },
 
-          MainVideo:"https://res.cloudinary.com/de4ncki8u/video/upload/v1770949788/Port1.0_bvnggz.mp4",
+          MainVideo:"/video/Port1.0.mp4",
 
           mockupLeft:"/images/project/Disaster/disaster.png",
           mockupRight:"/images/project/Disaster/videoaula.png",

@@ -113,20 +113,33 @@ export default function InteractivePortrait() {
             `#include <color_fragment>
             float rVal = texture2D(fbTexture, vUv).r;
             rVal -= clamp(dTime / pointerDuration, 0., 0.05);
+            rVal = min(rVal, 0.15);
 
-            vec2 uv = (vUv - 0.5) * 2. * vec2(aspect, 1.);
-            vec2 mouse = pointer * vec2(aspect, 1.);
-            float dist = length(uv - mouse);
+          vec2 uv = (vUv - 0.5) * 2. * vec2(aspect, 1.);
+          vec2 uvOpposite = -(vUv - 0.5) * 2. * vec2(aspect, 1.);
+     
 
-            float wave = sin(dist * 80.0 - time * 8.0) * 0.5 + 0.5;
-            float waveStrength = (1.0 - smoothstep(0.0, pointerRadius * 1.5, dist)) * wave;
+vec2 autoMove = vec2(
+    sin(time * 2.0) * 0.4,
+    cos(time * 1.8) * 0.6
+);
 
-            float f = 1. - smoothstep(pointerRadius*0.2, pointerRadius, dist);
-            f += waveStrength * 0.6;
+vec2 mouse = pointer * vec2(aspect, 1.);
 
-            rVal = clamp(rVal + f, 0., 1.);
+float distMouse = length(uv - mouse);
+float distAuto = length(uv - autoMove);
 
-            diffuseColor.rgb = vec3(rVal);
+float dist = min(distMouse, distAuto);
+
+float wave = sin(dist * 90.0 - time * 18.0) * 0.5 + 0.5;
+float waveStrength = (1.0 - smoothstep(0.0, pointerRadius * 1.5, dist)) * wave;
+
+float f = 1. - smoothstep(pointerRadius*0.4, pointerRadius*1.8, dist);
+f += waveStrength * 0.6;
+
+rVal = clamp(rVal + f, 0., 1.);
+
+diffuseColor.rgb = vec3(rVal);
             `
           );
         };
@@ -164,17 +177,21 @@ const HELMET_IMAGE = isMobile ? "/images/2mobile.png" : "/images/2.png";
     const textureLoader = new THREE.TextureLoader();
 const baseTexture = textureLoader.load(BASE_IMAGE, (texture) => {
 
-        const img = texture.image;
-        const imgAspect = img.width / img.height;
-        const containerAspect = width / height;
-        let planeWidth, planeHeight;
-        if (imgAspect > containerAspect) {
-          planeWidth = width;
-          planeHeight = width / imgAspect;
-        } else {
-          planeHeight = height;
-          planeWidth = height * imgAspect;
-        }
+      const img = texture.image;
+
+const imgAspect = img.width / img.height;
+const containerAspect = width / height;
+
+let planeWidth;
+let planeHeight;
+
+if (containerAspect > imgAspect) {
+  planeWidth = width;
+  planeHeight = width / imgAspect;
+} else {
+  planeHeight = height;
+  planeWidth = height * imgAspect;
+}
         baseImage.geometry.dispose();
         baseImage.geometry = new THREE.PlaneGeometry(planeWidth, planeHeight);
         helmetImage.geometry.dispose();
@@ -193,6 +210,34 @@ const baseTexture = textureLoader.load(BASE_IMAGE, (texture) => {
       transparent: true,
       alphaTest: 0.0,
     });
+
+    
+
+baseImageMaterial.onBeforeCompile = (shader) => {
+
+  shader.uniforms.time = gu.time;
+  
+
+  shader.fragmentShader = `
+  uniform float time;
+  ${shader.fragmentShader}
+  `.replace(
+   
+    `
+    vec2 uv = vUv;
+
+    float scan = sin((uv.y * 12.0) + time * 3.0);
+    scan = smoothstep(0.4, 1.0, scan);
+
+    vec3 scanColor = vec3(0.1,0.7,1.0) * scan * 0.6;
+
+    gl_FragColor.rgb += scanColor;
+
+    #include <dithering_fragment>
+    `
+  );
+
+};
     const baseImage = new THREE.Mesh(
       new THREE.PlaneGeometry(width, height),
       baseImageMaterial
@@ -200,7 +245,7 @@ const baseTexture = textureLoader.load(BASE_IMAGE, (texture) => {
     scene.add(baseImage);
 
     const bgPlaneMaterial = new THREE.MeshBasicMaterial({
-      color: 0x1a1f1a,
+      color: 0xffff,
       transparent: true,
     });
     bgPlaneMaterial.defines = { USE_UV: "" };
@@ -246,10 +291,11 @@ const baseTexture = textureLoader.load(BASE_IMAGE, (texture) => {
         vec2 blobUV=((vPosProj.xy/vPosProj.w)+1.)*0.5;
         vec4 blobData=texture(texBlob,blobUV);
         if(blobData.r<0.02)discard;
+        // controla cor do fundo
 
-        vec3 colorBg = vec3(1.0);
-        vec3 colorSoftShape = vec3(0.92);
-        vec3 colorLine = vec3(0.8);
+        vec3 colorBg = vec3(0.50, 0.50, 0.50);      // branco levemente cinza
+        vec3 colorSoftShape = vec3(0.70, 0.70, 0.70); // formas suaves cinza claro
+        vec3 colorLine = vec3(0.82, 0.84, 0.86);     // branco gelo
 
         vec2 uv = vUv * 3.5;
 

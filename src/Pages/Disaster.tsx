@@ -55,7 +55,7 @@ const Disaster = () => {
             
           },
 
-          MainVideo:"https://res.cloudinary.com/de4ncki8u/video/upload/v1762102275/E.D-video_z3qowq.mp4",
+          MainVideo:"/video/Disaster.mp4",
 
           mockupLeft:"/images/project/Disaster/disaster.png",
           mockupRight:"/images/project/Disaster/videoaula.png",

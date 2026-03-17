@@ -11,7 +11,7 @@ import AboutSection from "../components/AboutSection"
 import Projects from "../components/Projects"
 import Gallery from "../components/Gallery"
 import Frase from "../components/frase"
-// import Stacks from "../components/Stacks"
+import Stacks from "../components/Stacks"
 import Footer from "../components/Footer"
 import WorkTogether from "../components/WorkTogether"
 
@@ -79,7 +79,7 @@ export default function Home() {
           <Gallery />
           </div>
           <Frase />
-      {/* <Stacks /> */}
+       <Stacks /> 
           <WorkTogether />
           <Footer />
         </div>

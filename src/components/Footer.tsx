@@ -24,7 +24,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="font-zalando rounded-lg w-full bg-white">
+    <footer className="font-zalando  w-full bg-white">
       <div className="w-full overflow-hidden px-4 md:px-6">
         <div className="max-w-7xl mx-auto py-10">
 
@@ -32,7 +32,7 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row gap-10 md:gap-20 justify-between items-center md:items-start text-center md:text-left">
 
             {/* LINKS */}
-            <div className="flex flex-col gap-2 min-w-[150px] font-syne font-bold  items-start ">
+            <div className="flex flex-col gap-2 min-w-[150px] font-syne font-bold  md:items-start ">
               <h1 className="text-primaria text-base font-extrabold">VEJA AGORA</h1>
 
 
@@ -54,7 +54,7 @@ export default function Footer() {
                 viewBox="0 0 246 302"
                 fill="#fff"
                 stroke="#fff"
-                className="text-terciaria"
+                className="text-blue-400"
               >
                 <path
                   d="M1.65906 206.269L36.6591 3.26883H80.6591L64.6591 93.2688L94.6591 3.26883L124.659 45.2688L80.6591 123.769L102.659 211.269L124.659 297.269L102.659 279.269L80.6591 261.269L59.6591 123.769L46.6591 231.269L1.65906 206.269Z"
@@ -82,7 +82,7 @@ export default function Footer() {
                 className="flex items-center gap-2 text-primaria hover:scale-105 hover:text-terciaria py-1 transition whitespace-nowrap"
               >
                 <FaLinkedin className="h-7 w-7 " />
-                <span className="text-base font-bold">LINKEDIN</span>
+                <span className="text-base font-bold font-syne    ">LINKEDIN</span>
               </a>
 
               <a
@@ -92,7 +92,7 @@ export default function Footer() {
                  className="flex items-center gap-2 text-primaria hover:scale-105 hover:text-terciaria py-1 transition whitespace-nowrap"
               >
                 <FaGithub className="h-7 w-7 " />
-                <span className="text-base font-bold">GITHUB</span>
+                <span className="text-base font-syne font-bold">GITHUB</span>
               </a>
 
               <a
@@ -102,7 +102,7 @@ export default function Footer() {
                 className="flex items-center gap-2 text-primaria hover:scale-105 hover:text-terciaria py-1 transition whitespace-nowrap"
               >
                 <FaInstagram className="h-7 w-7 " />
-                <span className="text-base font-bold">INSTAGRAM</span>
+                <span className="text-base font-syne font-bold">INSTAGRAM</span>
               </a>
             </div>
 
