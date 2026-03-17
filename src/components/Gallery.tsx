@@ -85,18 +85,20 @@
 >
                 
                 {video.url.endsWith(".mp4") ? (
-                  <video
-                    className="
-                      w-full aspect-video object-cover
-                      transition-all duration-500
-                      group-hover:scale-105
-                      group-hover:blur-lg
-                    "
-                    src={video.url}
-                    loop
-                    autoPlay
-                    muted
-                  />
+               <video
+  className="
+    w-full aspect-video object-cover
+    transition-all duration-500
+    group-hover:scale-105
+    group-hover:blur-lg
+  "
+  src={video.url}
+  loop
+  autoPlay
+  muted
+  playsInline
+  webkit-playsinline="true"
+/>
                 ) : (
                   <iframe
                     className="

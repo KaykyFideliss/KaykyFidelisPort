@@ -209,8 +209,10 @@ const Links = [
       <video
         className="w-full rounded-xl border border-terciaria/10"
         src={infos[0].MainVideo}
-        loop
-        autoPlay
+         loop
+  autoPlay
+  muted
+  playsInline
         preload="metadata"
       />
     </div>
