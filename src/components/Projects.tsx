@@ -244,7 +244,7 @@ mm.add("(max-width: 767px)", () => {
     </div>
 
  {/* Texto descrição */}
-    <div className="items-end ml-5 mr-5 md:ml-0 md:mr-0 pop-cartoon-text z-20  md:w-[50rem] lg:w-[60rem] md:pr-10 md:pb-10  flex justify-center md:justify-start">
+    <div className="items-end ml-5 mr-5 md:ml-10 md:mr-0 pop-cartoon-text z-20  md:w-[50rem] lg:w-[60rem] md:pr-10 md:pb-10  flex justify-center md:justify-start">
       <p className="text-justify font-syne font-bold text-base md:text-lg lg:text-3xl pb-3 text-terciaria mb-10">
      Sou um desenvolvedor Frontend focado em criar interfaces modernas, responsivas e altamente performáticas. Transformo ideias em experiências 
      digitais intuitivas, combinando design estratégico, animações fluidas e código limpo. Tenho especial atenção à usabilidade, acessibilidade e aos detalhes

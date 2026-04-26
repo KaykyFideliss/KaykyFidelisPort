@@ -1,5 +1,5 @@
 import React from "react"
-import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa"
+import { FaInstagram, FaWhatsapp,FaLinkedin, FaGithub } from "react-icons/fa"
 
 const WorkTogether = () => {
 
@@ -20,6 +20,11 @@ const WorkTogether = () => {
       icon: <FaInstagram className="text-4xl md:text-6xl" />,
       url: "https://www.instagram.com/fidelizx.74/",
     },
+    {
+  name: "WhatsApp",
+  icon: <FaWhatsapp className="text-4xl md:text-6xl" />,
+  url: "https://wa.me/5531995156342?text=Olá%20vim%20pelo%20seu%20Portfólio%20e%20e%20gostaria%20de%20saber%20mais%20sobre%20seus%20serviços.%20Podemos%20conversar?",
+}
   ]
 
   return (
@@ -29,7 +34,7 @@ const WorkTogether = () => {
   className="
     w-full h-full
     max-w-7xl mx-auto
-    flex flex-col lg:flex-row
+    flex flex-col lg:flex-col
     justify-center items-center
     px-6 md:px-10 lg:px-16
     gap-12 lg:gap-52
@@ -39,24 +44,22 @@ const WorkTogether = () => {
         {/* TEXTO */}
         <div>
           <h1 className="
-            text-4xl sm:text-5xl md:text-6xl lg:text-9xl
+            text-4xl sm:text-5xl md:text-6xl lg:text-8xl
             text-primaria font-syne font-extrabold leading-tight
-            text-center lg:text-left 
+            text-center lg:text-center uppercase mb-20 
           ">
-            VAMOS<br />
-            <span className="text-terciaria">JUNTOS</span><br />
-            NESSA
+            VAMOS <span className="text-terciaria">JUNTOS</span> nessa 
           </h1>
-        </div>
 
-        {/* CONTATOS */}
+               {/* CONTATOS */}
         <div
           className="
             flex 
-            flex-row lg:flex-col     /* MOBILE → linha | DESKTOP → coluna */
+            flex-row      
             gap-6 md:gap-8
-            w-full lg:w-1/3
+            w-full 
             justify-center 
+            
           "
         >
           {contacts.map((contact) => (
@@ -84,6 +87,9 @@ const WorkTogether = () => {
             </a>
           ))}
         </div>
+        </div>
+
+    
 
       </div>
      

@@ -14,7 +14,7 @@ export default function Header() {
     { label: "SOBRE MIM", id: "about" },
     { label: "CARREIRA", id: "timeline" },
     { label: "PROJETOS", id: "projects" },
-    { label: "STACKS", id: "stacks" },
+    // { label: "STACKS", id: "stacks" },
     { label: "CONTATOS", id: "contact" },
   ]
 

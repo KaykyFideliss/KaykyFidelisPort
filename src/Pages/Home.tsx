@@ -4,14 +4,14 @@ import { useLocation } from "react-router-dom"
 import { useState, useEffect } from "react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-
+import WhatsappButton from "../components/WhatsappButton"
 import Header from "../components/header"
 import HeroSection from "../components/hero-section"
 import AboutSection from "../components/AboutSection"
 import Projects from "../components/Projects"
 import Gallery from "../components/Gallery"
 import Frase from "../components/frase"
-import Stacks from "../components/Stacks"
+// import Stacks from "../components/Stacks"
 import Footer from "../components/Footer"
 import WorkTogether from "../components/WorkTogether"
 
@@ -60,6 +60,8 @@ export default function Home() {
 }, [isLoading, location])
 
   return (
+    <>
+    <WhatsappButton />
     <main className="relative min-h-screen bg-blue-400">
 
       <Loader isReady={!isLoading} />
@@ -79,12 +81,13 @@ export default function Home() {
           <Gallery />
           </div>
           <Frase />
-       <Stacks /> 
+
           <WorkTogether />
           <Footer />
         </div>
       </div>
 
     </main>
+    </>
   )
 }

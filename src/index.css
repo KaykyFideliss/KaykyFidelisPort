@@ -51,3 +51,25 @@ html {
   animation: spinSlow 20s linear infinite;
 }
 
+
+
+@keyframes popIn {
+  0% {
+    transform: scale(0) rotate(-20deg);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.2) rotate(10deg);
+    opacity: 1;
+  }
+  80% {
+    transform: scale(0.95) rotate(-5deg);
+  }
+  100% {
+    transform: scale(1) rotate(0);
+  }
+}
+
+.animate-popIn {
+  animation: popIn 0.5s ease-out forwards;
+}

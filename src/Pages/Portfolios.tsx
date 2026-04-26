@@ -2,19 +2,23 @@
 "use client"
 import React from 'react'
 import { useState, useEffect } from "react";
-import { FaLink } from "react-icons/fa";
-import Stacks from '../components/frase';
-import { FaGithub   } from "react-icons/fa";
-
-import { FaReact } from "react-icons/fa";
-import { SiTailwindcss } from "react-icons/si";
-
-import { Github } from 'lucide-react';
-import { Link } from "react-router-dom";
-import { IoIosArrowForward } from "react-icons/io";
+import { FaLink, FaPhp } from "react-icons/fa";
 
 import gsap from "gsap";
 import { useLayoutEffect, useRef } from "react";
+
+import { FaReact, FaChartBar ,FaGithub } from "react-icons/fa";
+import { SiTailwindcss, SiFramer,SiArduino  } from "react-icons/si";
+import { DiMysql } from "react-icons/di";
+
+
+
+
+import { Link } from "react-router-dom";
+import { IoIosArrowForward } from "react-icons/io";
+
+
+
 
 const Acqualife = () => {
 
@@ -37,25 +41,27 @@ const Acqualife = () => {
   return () => ctx.revert();
 }, []);
 
+
   const infos = [
     {
-      title: "PORTFÓLIO 1.0",
-      description: "O site ENVIROLMENTAL DISASTER (Projeto E.D) é uma plataforma educativa sobre desastres ambientais, com foco em conscientização e educação.",
+      title: "CRIAÇOES DE PORTFÓLIOS",
+      description: "O Acqualife é um sistema automatizado que capta, filtra e reutiliza água da chuva para fins não potáveis, como descarga, limpeza e irrigação, em residências, promovendo economia, sustentabilidade e consciência ambiental.",
         icons: {
             site: FaLink,
             repo: FaGithub,
           },
 
-       stacks:{
+          stacks:{
             stack1: "React",
             stack2: "Tailwind CSS",
-            
+            stack3: "Api REST",
+            Stacks4:"C#",
           },
 
-          MainVideo:"/video/Port1.0.mp4",
+          MainVideo:"/video/acqualifeVideo.mp4",
 
-          mockupLeft:"",
-          mockupRight:"",
+          mockupLeft:"/images/project/acqualife/mockup.png",
+          mockupRight:"/images/project/acqualife/acqualife.png",
 
     },
 
@@ -64,9 +70,9 @@ const Acqualife = () => {
 const challenger = [
   {
     title: "DESAFIOS",
-    descriptionOne: "No desenvolvimento do Environmental Disaster, o maior desafio inicial foi aprender a utilizar React em conjunto com Tailwind CSS, pois esse projeto marcou meu primeiro contato prático com essa stack. Até então, minha experiência estava concentrada em HTML, CSS e JavaScript tradicional, trabalhando com páginas mais estruturais e scripts isolados. A introdução ao conceito de componentização, JSX, props e gerenciamento de estado representou uma mudança significativa na minha forma de pensar o desenvolvimento frontend.",
-    descriptionTwo:"Além da adaptação ao React, enfrentei dificuldades na compreensão da lógica de organização da aplicação em componentes reutilizáveis. No início, tive desafios para estruturar corretamente a divisão entre layout, conteúdo e comportamento, o que impactava na clareza do código. Também precisei entender como funcionava o fluxo de renderização do React e como as atualizações de estado influenciavam diretamente na interface.",
-    descriptionThree:"O uso do Tailwind CSS também exigiu uma curva de aprendizado. Diferentemente do CSS tradicional, precisei me adaptar à abordagem utility-first, compreendendo como combinar classes de forma estratégica para manter responsividade e organização visual. No começo, houve dificuldade em estruturar layouts mais complexos e garantir consistência visual sem tornar o código excessivamente poluído.",
+    descriptionOne: "Com o Acqualife, enfrentei alguns desafios relevantes ao longo do desenvolvimento. Inicialmente, o projeto possuía um escopo bem definido, mas durante a execução percebemos a necessidade de pivotar a ideia e transformar a solução em uma aplicação web, o que exigiu replanejamento técnico e reorganização das responsabilidades da equipe.",
+    descriptionTwo:" Além disso, tive dificuldades na integração com os dispositivos de IoT, principalmente relacionadas a falhas nas requisições e inconsistências na comunicação entre o hardware e a aplicação. Após diversos testes e ajustes — especialmente na estrutura das requisições e no tratamento de erros — consegui estabilizar a comunicação, garantindo maior confiabilidade na troca de dados em tempo real.",
+    descriptionThree:"        Essa experiência foi importante para desenvolver minha capacidade de adaptação, resolução de problemas e análise técnica em cenários com integração entre software e hardware.",
   }
 ]
 
@@ -74,9 +80,9 @@ const solution =[
   {
 
     title: "SOLUÇÃO",
-    descriptionOne: "Para superar esses desafios, investi tempo em pesquisa e aprendizado direcionado, utilizando principalmente a documentação oficial do React e do Tailwind, além de videoaulas e conteúdos técnicos no YouTube. Busquei compreender não apenas como implementar funcionalidades, mas também a lógica por trás da arquitetura baseada em componentes e da estilização orientada por utilitários.",
-    descriptionTwo:"Passei a analisar exemplos práticos e estudar a estrutura de projetos semelhantes, observando padrões de organização de pastas, separação de responsabilidades e boas práticas na criação de componentes. Essa abordagem me ajudou a entender melhor como estruturar a aplicação de forma escalável e como reaproveitar código de maneira eficiente.",
-    descriptionThree:"Com prática e experimentação constante, consegui consolidar o uso do React e do Tailwind no projeto, organizando melhor os componentes e estruturando layouts responsivos com maior segurança. O processo foi fundamental para expandir minha base técnica, marcar minha transição para uma stack moderna de frontend e aumentar minha confiança no desenvolvimento de aplicações mais robustas e organizadas.",
+    descriptionOne: "Para solucionar os problemas enfrentados no desenvolvimento do Acqualife, reestruturei a organização do estado da aplicação e a comunicação com os dispositivos IoT. No frontend, utilizei Hooks do React para centralizar os estados críticos, especialmente os dados recebidos em tempo real. Com o useEffect, controlei o ciclo de vida das requisições para evitar execuções desnecessárias, enquanto o useState manteve a interface sincronizada com as atualizações dos sensores.",
+    descriptionTwo:"Também implementei a Context API para eliminar o prop drilling e centralizar informações globais, como dados dos dispositivos e status de conexão. Isso tornou a arquitetura mais escalável, facilitou a manutenção e deixou o código mais organizado após a transição para aplicação web.",
+    descriptionThree:"Na integração com o backend e os dispositivos, padronizei as requisições via fetch, estruturando melhor os endpoints, validando respostas e fortalecendo o tratamento de erros com try/catch e verificação de status HTTP. Com isso, estabilizei a comunicação entre hardware e software, reduzi inconsistências e aumentei a confiabilidade da troca de dados em tempo real, garantindo uma experiência mais fluida e responsiva para os usuários do Acqualife.",
   }
 ]
 
@@ -87,7 +93,15 @@ const Tools = [
       react: { icon: FaReact, label: "React" },
      tailwind: { icon: SiTailwindcss, label: "Tailwind CSS" },
      
-    
+      Recharts: { icon:FaChartBar  , label: "Recharts" },
+      
+     
+        mysql: { icon: DiMysql, label: "MySQL" },
+      php: { icon: FaPhp, label: "PHP" },
+
+        arduino: { icon: SiArduino, label: "Arduino" },
+        framer: { icon: SiFramer, label: "Framer Motion" },
+        github: { icon: FaGithub, label: "GitHub" },  
         
     }
   }
@@ -95,16 +109,16 @@ const Tools = [
 const Links = [
 
   {
-    Github: "https://github.com/KaykyFideliss/Envirolmental-Disaster-Responsivo",
-    Preview: "https://envirolmental-disaster.vercel.app",
+    Github: "https://github.com/KaykyFideliss/Website-Acqualife",
+    Preview: "https://acqualife.vercel.app",
   },
       
 ]
   return (
-<section
+  <section
     ref={sectionRef}
     className="w-full bg-WHITE flex flex-col items-center mt-20 overflow-hidden"
-  >
+    >
 
    {/* Voltar / Breadcrumb */}
 <div className="flex  items-center gap-2 w-full 
@@ -139,7 +153,6 @@ const Links = [
 
   </div>
 </div>
-
 
   {/* HERO */}
   <div className="w-full max-w-7xl px-6 flex flex-col items-center gap-4">
@@ -205,8 +218,18 @@ const Links = [
     </div>
 
     {/* MOCKUPS */}
-  
-   
+    <div className="grid md:grid-cols-2 gap-4 w-full mt-10">
+      <img
+        src={infos[0].mockupLeft}
+        alt="Mockup esquerdo Acqualife"
+        className="w-full rounded-xl border border-terciaria/10"
+      />
+      <img
+        src={infos[0].mockupRight}
+        alt="Mockup direito Acqualife"
+        className="w-full rounded-xl border border-terciaria/10"
+      />
+    </div>
   </div>
 
   {/* DESAFIOS */}
@@ -293,4 +316,4 @@ const Links = [
   )
 }
 
-export default Acqualife
+export default Acqualife;
